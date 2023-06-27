@@ -4,3 +4,7 @@
   background-color: white;
   margin: 10px;
 }
+
+.sheet:hover {
+  cursor: pointer;
+}

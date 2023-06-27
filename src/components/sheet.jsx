@@ -1,4 +1,9 @@
 import "./sheet.css";
 export default function Sheet() {
-  return <div className="sheet"></div>;
+  return (
+    <div>
+      <div className="sheet"></div>
+      Notepad
+    </div>
+  );
 }

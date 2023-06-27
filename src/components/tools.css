@@ -1,0 +1,23 @@
+.tools {
+  background-color: #f1f3f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+.tools1 {
+  background-color: grey;
+  display: flex;
+  width: 250px;
+  height: 150px;
+  margin: 10px;
+  overflow: hidden;
+}
+.tools-out {
+  display: flex;
+}
+@media (max-width: 700px) {
+  .tools1 {
+    overflow: hidden;
+  }
+}

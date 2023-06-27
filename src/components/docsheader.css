@@ -20,10 +20,32 @@ input {
   width: 450px;
   background-color: #f1f3f4;
 }
-
+.buttons {
+  margin-left: 0cm;
+}
+.buttons ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.buttons li {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 0px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.buttons li:hover {
+  background-color: #f1f3f4;
+}
 @media (max-width: 700px) {
   input {
     width: 100%;
+  }
+}
+@media (max-width: 1500px) {
+  .buttons {
+    display: none;
   }
 }
 .apps {
@@ -47,4 +69,8 @@ input {
 }
 .icon {
   height: 50px;
+}
+.docs-title {
+  display: flex;
+  flex-direction: column;
 }

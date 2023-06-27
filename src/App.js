@@ -1,14 +1,15 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Header from "./components/header";
-import Creation from "./components/creation";
+import Main from "./components/main";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Docs from "./components/docs";
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <h3>Start a new Document</h3>
-      <Creation />
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Main />} />
+        <Route exact path="/docs" element={<Docs />} />
+      </Routes>
+    </Router>
   );
 }
 

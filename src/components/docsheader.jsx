@@ -1,21 +1,37 @@
-import "./header.css";
+import "./docsheader.css";
 import DescriptionIcon from "@mui/icons-material/Description";
 import AppsIcon from "@mui/icons-material/Apps";
 
-export default function Header() {
+export default function DocsHeader() {
   return (
     <div className="header">
       <DescriptionIcon
         style={{
-          transform: "scale(1.7)",
+          transform: "scale(2)",
           margin: "20px",
           marginLeft: "30px",
           color: "blue",
         }}
       />
-      <h7 style={{ margin: "10px", color: "black", fontSize: "30px" }}>
-        Live Docs
-      </h7>
+
+      <div className="docs-title">
+        <h7 style={{ marginTop: "10px", color: "black", fontSize: "20px" }}>
+          Untitled Document
+        </h7>
+        <div className="buttons">
+          <ul>
+            <li>File</li>
+            <li>Edit</li>
+            <li>View</li>
+            <li>Insert</li>
+            <li>Format</li>
+            <li>Tools</li>
+            <li>Extensions</li>
+            <li>Help</li>
+          </ul>
+        </div>
+      </div>
+
       <div className="input-wrapper">
         <input type="text" placeholder="   Search" />
       </div>

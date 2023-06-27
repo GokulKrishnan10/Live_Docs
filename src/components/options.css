@@ -1,0 +1,12 @@
+.options-class {
+  background-color: #f1f3f4;
+  border-radius: 30px;
+  display: flex;
+  height: 40px;
+  margin: 10px;
+}
+.options-container {
+  background-color: white;
+  flex-direction: row;
+  height: 70px;
+}

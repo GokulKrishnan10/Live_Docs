@@ -1,5 +1,9 @@
 .creation {
   height: 8cm;
-  background-color: grey;
+  background-color: #f1f3f4;
   display: flex;
+  justify-content: center;
+}
+.outer-creation {
+  background-color: #f1f3f4;
 }

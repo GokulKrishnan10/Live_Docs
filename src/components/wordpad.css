@@ -1,0 +1,12 @@
+.pad {
+  display: flex;
+  background-color: grey;
+  height: 50cm;
+  justify-content: center;
+  align-items: center;
+}
+.page {
+  height: 48cm;
+  width: 25cm;
+  background-color: white;
+}
