@@ -44,13 +44,23 @@ input {
   }
 }
 @media (max-width: 1500px) {
-  .buttons {
+  /* .buttons {
     display: none;
-  }
+  } */
 }
+.app-container {
+  display: flex;
+  margin-left: auto;
+  justify-content: flex-end;
+  margin-right: 0%;
+}
+
 .apps {
   cursor: pointer;
+  margin: 20px;
+  transform: scale(1.4);
 }
+
 .signUp {
   background-color: aqua;
   margin: 10px;

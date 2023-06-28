@@ -1,0 +1,23 @@
+.popup {
+  background-color: white;
+  width: 200px;
+  display: flex;
+  border-radius: 15px;
+  /* box-shadow: 2px 2px 2px black solid; */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  margin-top: 0.5cm;
+  z-index: 9999;
+  top: 8%;
+  left: 5%;
+  /* position: fixed; */
+}
+.popup ul {
+  list-style: none;
+}
+ul li {
+  color: black;
+}
+li:hover {
+  cursor: pointer;
+}

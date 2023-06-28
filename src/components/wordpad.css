@@ -9,4 +9,11 @@
   height: 48cm;
   width: 25cm;
   background-color: white;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.page:focus {
+  outline: none;
 }

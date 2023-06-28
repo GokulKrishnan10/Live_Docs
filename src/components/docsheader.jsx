@@ -2,7 +2,13 @@ import "./docsheader.css";
 import DescriptionIcon from "@mui/icons-material/Description";
 import AppsIcon from "@mui/icons-material/Apps";
 
-export default function DocsHeader() {
+export default function DocsHeader({ setOpen }) {
+  document.addEventListener("click", (event) => {
+    console.log(event.target.className);
+    if (event.target.className === "open" || event.target.className === "popup")
+      return;
+    setOpen(false);
+  });
   return (
     <div className="header">
       <DescriptionIcon
@@ -20,7 +26,9 @@ export default function DocsHeader() {
         </h7>
         <div className="buttons">
           <ul>
-            <li>File</li>
+            <li onClick={() => setOpen(true)} className="open">
+              File
+            </li>
             <li>Edit</li>
             <li>View</li>
             <li>Insert</li>
@@ -31,15 +39,18 @@ export default function DocsHeader() {
           </ul>
         </div>
       </div>
-
-      <div className="input-wrapper">
-        <input type="text" placeholder="   Search" />
+      <div className="app-container">
+        <AppsIcon
+          style={{
+            margin: "20px",
+            transform: "scale(1.4)",
+            marginLeft: "auto",
+            justifyContent: "flex-end",
+          }}
+          className="apps"
+        />
+        <button className="signUp">Sign Up</button>
       </div>
-      <AppsIcon
-        style={{ margin: "20px", transform: "scale(1.4)" }}
-        className="apps"
-      />
-      <button className="signUp">Sign Up</button>
     </div>
   );
 }
