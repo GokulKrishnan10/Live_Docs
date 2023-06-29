@@ -1,6 +1,7 @@
 import "./header.css";
 import DescriptionIcon from "@mui/icons-material/Description";
 import AppsIcon from "@mui/icons-material/Apps";
+import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
@@ -23,7 +24,9 @@ export default function Header() {
         style={{ margin: "20px", transform: "scale(1.4)" }}
         className="apps"
       />
-      <button className="signUp">Sign Up</button>
+      <Link to="/signup">
+        <button className="signUp">Sign Up</button>
+      </Link>
     </div>
   );
 }

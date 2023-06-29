@@ -1,6 +1,7 @@
 import "./docsheader.css";
 import DescriptionIcon from "@mui/icons-material/Description";
 import AppsIcon from "@mui/icons-material/Apps";
+import { Link } from "react-router-dom";
 
 export default function DocsHeader({ setOpen }) {
   document.addEventListener("click", (event) => {
@@ -49,7 +50,9 @@ export default function DocsHeader({ setOpen }) {
           }}
           className="apps"
         />
-        <button className="signUp">Sign Up</button>
+        <Link to="/signup">
+          <button className="signUp">Sign Up</button>
+        </Link>
       </div>
     </div>
   );
