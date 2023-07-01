@@ -20,8 +20,11 @@ export default function Signupform() {
           <button className="submit-button">Submit</button>
         </form>
         <hr></hr>
-        <button>SignUp using Google</button>
-        <GoogleOAuthProvider clientId="1000244117596-sfjov7prsj9l0mo32aisc851l8j7f5e3.apps.googleusercontent.com">
+
+        <GoogleOAuthProvider
+          style={{ marginLeft: "200px" }}
+          clientId="1000244117596-sfjov7prsj9l0mo32aisc851l8j7f5e3.apps.googleusercontent.com"
+        >
           <Google />
         </GoogleOAuthProvider>
       </div>

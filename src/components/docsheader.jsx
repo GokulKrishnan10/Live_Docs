@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
 export default function DocsHeader({ setOpen }) {
   document.addEventListener("click", (event) => {
-    console.log(event.target.className);
+    // console.log(event.target.className);
+    console.log(event.clientX);
     if (event.target.className === "open" || event.target.className === "popup")
       return;
     setOpen(false);
@@ -30,7 +31,7 @@ export default function DocsHeader({ setOpen }) {
             <li onClick={() => setOpen(true)} className="open">
               File
             </li>
-            <li>Edit</li>
+            <li onClick={() => setOpen(true)}>Edit</li>
             <li>View</li>
             <li>Insert</li>
             <li>Format</li>
