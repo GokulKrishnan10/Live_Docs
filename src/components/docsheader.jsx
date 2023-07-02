@@ -5,12 +5,16 @@ import { Link } from "react-router-dom";
 
 export default function DocsHeader({ setOpen }) {
   document.addEventListener("click", (event) => {
-    // console.log(event.target.className);
     console.log(event.clientX);
     if (event.target.className === "open" || event.target.className === "popup")
       return;
     setOpen(false);
   });
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+    }
+  };
   return (
     <div className="header">
       <DescriptionIcon
@@ -24,7 +28,9 @@ export default function DocsHeader({ setOpen }) {
 
       <div className="docs-title">
         <h7 style={{ marginTop: "10px", color: "black", fontSize: "20px" }}>
-          Untitled Document
+          <span contentEditable="true" onKeyDown={handleKeyDown}>
+            Untitled Document
+          </span>
         </h7>
         <div className="buttons">
           <ul>

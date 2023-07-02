@@ -43,10 +43,10 @@ input {
     width: 100%;
   }
 }
-@media (max-width: 1500px) {
-  /* .buttons {
+@media (max-width: 750px) {
+  .buttons {
     display: none;
-  } */
+  }
 }
 .app-container {
   display: flex;
@@ -66,6 +66,7 @@ input {
   margin: 10px;
   width: 100px;
   border-radius: 20px;
+  height: 40px;
   border: none;
   margin-left: auto;
   justify-content: flex-end;

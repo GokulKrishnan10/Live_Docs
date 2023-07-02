@@ -8,6 +8,11 @@
 .page {
   height: 48cm;
   width: 25cm;
+  text-indent: 40px;
+  /* padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px; */
   background-color: white;
   overflow: auto;
   display: flex;
@@ -16,4 +21,11 @@
 }
 .page:focus {
   outline: none;
+}
+.edit-para:focus {
+  outline: none;
+}
+.edit-para {
+  margin: 60px;
+  margin-top: 60px;
 }
