@@ -1,4 +1,4 @@
-import "./tools.css";
+import "./css/tools.css";
 export default function Tools() {
   return (
     <div className="tools">

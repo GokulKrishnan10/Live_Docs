@@ -1,4 +1,4 @@
-import "./options.css";
+import "./css/options.css";
 export default function Options() {
   return (
     <div className="options-container">

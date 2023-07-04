@@ -1,4 +1,4 @@
-import "./popups.css";
+import "./css/popups.css";
 export default function PopUps() {
   return (
     <div className="popup">

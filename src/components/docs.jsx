@@ -1,4 +1,4 @@
-import "./docs.css";
+import "./css/docs.css";
 import DocsHeader from "./docsheader";
 import Options from "./options";
 import PopUps from "./popups";

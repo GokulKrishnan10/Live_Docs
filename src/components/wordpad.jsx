@@ -1,4 +1,4 @@
-import "./wordpad.css";
+import "./css/wordpad.css";
 export default function WordPad({ setPage }) {
   function handleSomething(event) {
     const height = document.querySelector(".page").offsetHeight;

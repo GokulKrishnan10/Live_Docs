@@ -1,4 +1,4 @@
-import "./signupform.css";
+import "./css/signupform.css";
 import { Google } from "./google";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 export default function Signupform() {
