@@ -3,8 +3,8 @@
   height: 240px;
   background-color: white;
   margin: 10px;
+  border: 1px solid black;
 }
-
 .sheet:hover {
   cursor: pointer;
 }

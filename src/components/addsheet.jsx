@@ -7,7 +7,7 @@ export default function AddSheet() {
         <br />
         <img src={add} alt="" style={{ height: "200px", marginLeft: "0%" }} />
       </div>
-      Notepad
+      Create a New Document
     </div>
   );
 }
