@@ -1,6 +1,6 @@
 import "./css/docsheader.css";
-import DescriptionIcon from "@mui/icons-material/Description";
 import AppsIcon from "@mui/icons-material/Apps";
+import DescriptionIcon from "@mui/icons-material/Description";
 import { Link } from "react-router-dom";
 
 export default function DocsHeader({ setOpen }) {
@@ -19,18 +19,16 @@ export default function DocsHeader({ setOpen }) {
     <div className="header">
       <DescriptionIcon
         style={{
-          transform: "scale(2)",
+          transform: "scale(1.7)",
           margin: "20px",
           marginLeft: "30px",
-          color: "blue",
+          color: "#4285f4",
         }}
       />
 
       <div className="docs-title">
         <h7 style={{ marginTop: "10px", color: "black", fontSize: "20px" }}>
-          <span contentEditable="true" onKeyDown={handleKeyDown}>
-            Untitled Document
-          </span>
+          Untitled Document
         </h7>
         <div className="buttons">
           <ul>
@@ -48,15 +46,25 @@ export default function DocsHeader({ setOpen }) {
         </div>
       </div>
       <div className="app-container">
-        <AppsIcon
-          style={{
-            margin: "20px",
-            transform: "scale(1.4)",
-            marginLeft: "auto",
-            justifyContent: "flex-end",
-          }}
-          className="apps"
-        />
+        <span
+          class="material-symbols-outlined"
+          style={{ marginTop: "7%", marginRight: "7%" }}
+        >
+          comment
+        </span>
+        <span
+          class="material-symbols-outlined"
+          style={{ marginTop: "7%", marginRight: "7%" }}
+        >
+          videocam
+        </span>
+        <span
+          class="material-symbols-outlined"
+          style={{ marginTop: "7%", marginRight: "7%", fontSize: "30px" }}
+        >
+          apps
+        </span>
+
         <Link to="/signup">
           <button className="signUp">Sign Up</button>
         </Link>

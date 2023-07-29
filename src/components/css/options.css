@@ -1,12 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+
 .options-class {
   background-color: #f1f3f4;
   border-radius: 30px;
   display: flex;
-  height: 40px;
+  height: 50px;
   margin: 10px;
 }
+
 .options-container {
   background-color: white;
   flex-direction: row;
   height: 70px;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.icons {
+  margin: 10px;
+  display: flex;
+}
+span {
+  margin-left: 25px;
+}
+
+.first-icons {
+  display: flex;
+  align-self: flex-start;
+}
+
+.second-icons {
+  display: flex;
+  align-self: flex-end;
+}
+span:hover {
+  cursor: pointer;
 }
