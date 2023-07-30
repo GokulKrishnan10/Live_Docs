@@ -1,14 +1,12 @@
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useDispatch } from "react-redux";
 import { changeFont } from "./redux/actions";
-import { useState } from "react";
 import { changeBold } from "./redux/actions";
 import { changeItalic } from "./redux/actions";
 import { changeSize } from "./redux/actions";
 import "./css/selection.css";
 
 export function Selection() {
-  const position = useSelector((state) => state.position);
   const dispatch = useDispatch();
   const bold = useSelector((state) => state.bold);
   const font = useSelector((state) => state.font);

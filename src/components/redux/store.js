@@ -8,6 +8,7 @@ const initialValue = {
   bold: "300",
   italic: "normal",
   size: "17",
+  value: true,
 };
 function storeReduce(state = initialValue, actions) {
   switch (actions.type) {
@@ -55,6 +56,13 @@ function storeReduce(state = initialValue, actions) {
       return {
         ...state,
         size: actions.payload,
+      };
+    }
+    case "set-display": {
+      console.log("Header display have been changed", actions.payload);
+      return {
+        ...state,
+        value: actions.payload,
       };
     }
     default:

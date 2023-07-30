@@ -26,3 +26,7 @@ export const changeSize = (size) => ({
   type: "set-size",
   payload: size,
 });
+export const changeHeader = (value) => ({
+  type: "set-display",
+  payload: value,
+});
