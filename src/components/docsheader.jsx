@@ -1,16 +1,17 @@
 import "./css/docsheader.css";
 import DescriptionIcon from "@mui/icons-material/Description";
 import { Link } from "react-router-dom";
-import { useState, useRefArray, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
-export default function DocsHeader({ setOpen }) {
+export default function DocsHeader() {
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
     }
   };
 
-  const selectRef = useRefArray();
+  const selectRef = useRef();
+  const helpRef = useRef();
 
   const arr = [];
 
@@ -25,56 +26,23 @@ export default function DocsHeader({ setOpen }) {
   const [extensions, setExtensions] = useState(false);
   const [help, setHelp] = useState(false);
 
-  // document.addEventListener("click", (event) => {
-  //   if (selectRef.current && !selectRef.current.contains(event.target)) {
-  //     setFile(false);
-  //     console.log("Refernce is", selectRef);
-  //   }
-  //   console.log("Refernce is", selectRef);
-  // // });
-  // const eventHappening = (event) => {
-  //   if (!selectRef?.current?.contains(event.target)) {
-  //     setFile(false);
-  //     // setEdit(false);
-  //     // setHelp(false);
-  //     // setExtensions(false);
-  //     // setInsert(false);
-  //     // setView(false);
-  //     console.log("Refernce is outside here------", selectRef);
-  //   }
-  //   console.log("Refernce is", selectRef);
-  // };
-  // document.addEventListener("click", eventHappening);
+  // function handle() {
+  //   setFile(!file);
+  // }
   useEffect(() => {
-    const eventHappening = (event) => {
-      if (!selectRef.current?.contains(event.target)) {
-        setFile(false);
-        setEdit(false);
+    function handle(event) {
+      console.log(selectRef.current, event.target.classList, helpRef.current);
+      if (
+        !selectRef.current?.contains(event.target) &&
+        !helpRef.current?.contains(event.target) &&
+        event.target.className !== "pop"
+      ) {
         setHelp(false);
-        setExtensions(false);
-        setInsert(false);
-        setView(false);
-        console.log(
-          "Refernce is outside here------",
-          selectRef,
-          selectRef?.current,
-          selectRef?.current?.contains(event.target),
-          "event target is",
-          event.target
-        );
       }
-      console.log("Refernce is", selectRef);
-    };
-    document.addEventListener("click", eventHappening);
-    console.log("SelectRef is", selectRef.current);
-    return () => {
-      document.removeEventListener("click", eventHappening);
-    };
+    }
+    document.addEventListener("click", handle);
+    return () => document.removeEventListener("click", handle);
   }, []);
-
-  function handle() {
-    setFile(!file);
-  }
 
   return (
     <div className="header">
@@ -88,78 +56,83 @@ export default function DocsHeader({ setOpen }) {
       />
 
       <div className="docs-title">
-        <h7 style={{ marginTop: "10px", color: "black", fontSize: "20px" }}>
+        <h7
+          style={{ marginTop: "10px", color: "black", fontSize: "20px" }}
+          contentEditable="true"
+          spellCheck="false"
+          onKeyDown={handleKeyDown}
+        >
           Untitled Document
         </h7>
         <div className="buttons">
           <ul>
-            <li onClick={handle} ref={selectRef}>
+            <li onClick={() => setFile(!file)}>
               File
               {file && (
-                <div className="pop" ref={selectRef}>
+                <div className="pop">
                   <ul>{arr}</ul>
                 </div>
               )}
             </li>
 
-            <li onClick={() => setEdit(!edit)} ref={selectRef}>
+            <li onClick={() => setEdit(!edit)}>
               Edit
               {edit && (
-                <div className="file pop" ref={selectRef}>
+                <div className="pop">
                   <ul>{arr}</ul>
                 </div>
               )}
             </li>
 
-            <li onClick={() => setView(!view)} ref={selectRef}>
+            <li onClick={() => setView(!view)}>
               View
               {view && (
-                <div className="file pop" ref={selectRef}>
+                <div className="pop">
                   <ul>{arr}</ul>
                 </div>
               )}
             </li>
 
-            <li onClick={() => setInsert(!insert)} ref={selectRef}>
+            <li onClick={() => setInsert(!insert)}>
               Insert
               {insert && (
-                <div className="file pop" ref={selectRef}>
+                <div className="pop">
                   <ul>{arr}</ul>
                 </div>
               )}
             </li>
 
-            <li onClick={() => setFormat(!format)} ref={selectRef}>
+            <li onClick={() => setFormat(!format)}>
               Format
               {format && (
-                <div className="file pop" ref={selectRef}>
+                <div className="pop">
                   <ul>{arr}</ul>
                 </div>
               )}
             </li>
 
-            <li onClick={() => setTools(!tools)} ref={selectRef}>
+            <li onClick={() => setTools(!tools)}>
               Tools
               {tools && (
-                <div className="file pop" ref={selectRef}>
+                <div className="pop">
                   <ul>{arr}</ul>
                 </div>
               )}
             </li>
 
-            <li onClick={() => setExtensions(!extensions)} ref={selectRef}>
+            <li onClick={() => setExtensions(!extensions)}>
               Extensions
               {extensions && (
-                <div className="file pop" ref={selectRef}>
+                <div className="pop">
                   <ul>{arr}</ul>
                 </div>
               )}
             </li>
 
-            <li onClick={() => setHelp(!help)} ref={selectRef}>
+            <li onClick={() => setHelp(true)} ref={selectRef}>
               Help
               {help && (
-                <div className="file pop" ref={selectRef}>
+                <div className="pop" ref={helpRef}>
                   <ul style={{ listStyle: "disc" }}>{arr}</ul>
                 </div>
               )}

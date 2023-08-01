@@ -5,8 +5,9 @@
 
 .header {
   display: flex;
-  height: 65px;
+  height: 70px;
   margin: 0px;
+  background-color: #fff;
 }
 
 .pop > ul {
