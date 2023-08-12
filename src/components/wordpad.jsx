@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { Selection } from "./selection";
 import { useRef } from "react";
+import { openOnSelect } from "./redux/actions";
 
 export default function WordPad({ setPage }) {
   const select = useSelector((state) => state.select);
@@ -45,29 +46,49 @@ export default function WordPad({ setPage }) {
     // console.log("In select is", event);
     console.log(pRef.current);
     console.log(select);
-    const string = select.toString();
-    if (select.anchorNode && string.length > 0) {
-      console.log("Selection happenned");
-      if (select.anchorNode && select.anchorNode.parentElement) {
-        select.anchorNode.parentElement.style.backgroundColor = "white";
-        select.anchorNode.parentElement.style.fontSize = "20px";
-        select.anchorNode.parentElement.style.fontFamily = "Verdana";
-      }
-    }
-
-    console.log(select.anchorNode.parentElement);
+    let string = select.toString();
+    string = string.trim();
+    dispatch(openOnSelect("select"));
+    // console.log(select.anchorNode.parentElement);
   };
 
-  function handleText(event) {}
+  const textChange = (event) => {
+    const select = window.getSelection();
+    console.log(select.toString());
+    // select.style.backgroundColor = "blue";
+    // console.log("In select is", event);
+    console.log(pRef.current);
+    console.log(select);
+    let string = select.toString();
+    string = string.trim();
+    dispatch(openOnSelect("select"));
+    if (select.anchorNode && string.length > 0) {
+      const node = select.anchorNode;
+      const range = select.getRangeAt(0);
+
+      console.log("Range is", range);
+      console.log("Selection happenned", font, size);
+      console.log("Node is", node.parentElement);
+      if (node.parentElement) {
+        console.log("Font is", font);
+        const div = document.createElement("div");
+        div.innerText = string;
+        console.log("Newly created element", div);
+        div.style.backgroundColor = "white";
+        div.style.fontSize = `${size}px`;
+        div.style.fontFamily = font;
+
+        node.parentElement.append(div);
+        range.deleteContents();
+      }
+    }
+  };
+
+  // function handleSelect(event) {}
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsSelecting(isSelecting);
-    }, 200);
-
-    // Clear the timer on unmount to avoid memory leaks
-    return () => clearTimeout(timer);
-  }, [isSelecting]);
+    textChange("hello");
+  }, [font, size]);
 
   return (
     <div className="pad">
@@ -82,6 +103,8 @@ export default function WordPad({ setPage }) {
           onKeyDown={handleEnter}
           style={{
             lineHeight: "1.5",
+            // display: "flex",
+            // flexDirection: "column",
           }}
         ></p>
         {select && <Selection style={{ position: "absolute" }} />}

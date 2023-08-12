@@ -26,3 +26,8 @@
 .edit-para {
   margin: 100px;
 }
+.edit-para div {
+  display: inline;
+  /* flex-direction: column; */
+  margin: 0;
+}

@@ -61,6 +61,7 @@ export default function DocsHeader() {
           contentEditable="true"
           spellCheck="false"
           onKeyDown={handleKeyDown}
+          className="docsTitle"
         >
           Untitled Document
         </h7>
@@ -141,28 +142,39 @@ export default function DocsHeader() {
         </div>
       </div>
       <div className="app-container">
-        <span
-          class="material-symbols-outlined"
-          style={{ marginTop: "7%", marginRight: "7%" }}
+        <div
+          className="icons-corner"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            marginTop: "2.5%",
+            marginRight: "4%",
+          }}
         >
-          comment
-        </span>
-        <span
-          class="material-symbols-outlined"
-          style={{ marginTop: "7%", marginRight: "7%" }}
-        >
-          videocam
-        </span>
-        <span
-          class="material-symbols-outlined"
-          style={{ marginTop: "7%", marginRight: "7%", fontSize: "30px" }}
-        >
-          apps
-        </span>
-
-        <Link to="/signup">
-          <button className="signUp">Sign Up</button>
-        </Link>
+          <span
+            class="material-symbols-outlined"
+            style={{ marginTop: "7%", marginRight: "7%" }}
+          >
+            comment
+          </span>
+          <span
+            class="material-symbols-outlined"
+            style={{ marginTop: "7%", marginRight: "7%" }}
+          >
+            videocam
+          </span>
+          <span
+            class="material-symbols-outlined"
+            style={{ marginTop: "7%", marginRight: "7%", fontSize: "30px" }}
+          >
+            apps
+          </span>
+        </div>
+        <div style={{ marginLeft: "5%", marginRight: "5%" }}>
+          <Link to="/signup">
+            <button className="signUp">Sign Up</button>
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -27,6 +27,7 @@ export function Selection() {
     "Mulish",
     "Manrope",
     "REM",
+    "Poppins",
   ];
   const fonts1 = [
     "Arial",
@@ -44,6 +45,9 @@ export function Selection() {
     "Noto Sans",
     "Ubuntu",
     "Droid Sans",
+    "Poppins",
+    "Roboto",
+    "Oswald",
   ];
 
   const options = [];
