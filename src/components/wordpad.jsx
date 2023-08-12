@@ -1,11 +1,8 @@
 import "./css/wordpad.css";
 import { useDispatch, useSelector } from "react-redux";
-import { openOnSelect } from "./redux/actions";
-import { changePosition } from "./redux/actions";
 import { useState, useEffect } from "react";
 import { Selection } from "./selection";
-// import styled from "styled-components";
-// import { UseSelector } from "react-redux/es/hooks/useSelector";
+import { useRef } from "react";
 
 export default function WordPad({ setPage }) {
   const select = useSelector((state) => state.select);
@@ -15,56 +12,53 @@ export default function WordPad({ setPage }) {
   const size = useSelector((state) => state.size);
   const dispatch = useDispatch();
   const [isSelecting, setIsSelecting] = useState(false);
+  const pRef = useRef();
   function handleSomething(event) {
     const height = document.querySelector(".page").offsetHeight;
     const h = event.target.offsetHeight;
+    //  console.log(h, " and height in handleSomething is", height);
     if (h > height) {
       setPage((prev) => prev + 1);
       return;
     }
   }
 
-  function handleText(event) {
-    const selection = window.getSelection();
-    const text = selection.toString();
-    const range = window.getSelection().getRangeAt(0);
-    console.log("Select is", select);
-    if (text.length > 0) {
-      console.log(
-        "Range is",
-        range,
-        "and text is",
-        text,
-        "length is",
-        text.length
-      );
-      console.log(
-        "A text has been selected",
-        event.nativeEvent.screenX,
-        event.nativeEvent.screenY
-      );
-      const span = document.createElement("span");
-      span.innerText = text;
-      //document.querySelector(".edit-para").appendChild(span);
-      // span.style.backgroundColor = "yellow";
-      span.style.fontFamily = `"${font}",sans-serif`;
-      span.style.fontSize = `${size}px`;
-      span.style.fontWeight = bold;
-      span.style.fontStyle = style;
-      // range.surroundContents(span);
-      // await dispatch(
-      //   changePosition({
-      //     x: event.nativeEvent.screenX,
-      //     y: event.nativeEvent.screenY,
-      //   })
-      // );
-      range.deleteContents();
-      range.insertNode(span);
-      //selection.removeAllRanges();
-      dispatch(openOnSelect(true));
+  // pRef.current.
+  function handleEnter(event) {
+    if (event.key === "Enter") {
+      const height = document.querySelector(".page").offsetHeight;
+      const h = event.target.offsetHeight;
+      const p = document.querySelector(".edit-para").offsetHeight;
+      console.log(h, " and height is", height, "p height", p);
+      if (p > 1630) {
+        setPage((prev) => prev + 1);
+        event.preventDefault();
+        return;
+      }
     }
-    console.log("Size changing in word Pad or not", size);
   }
+
+  const handleSelect = (event) => {
+    const select = window.getSelection();
+    console.log(select.toString());
+    // select.style.backgroundColor = "blue";
+    // console.log("In select is", event);
+    console.log(pRef.current);
+    console.log(select);
+    const string = select.toString();
+    if (select.anchorNode && string.length > 0) {
+      console.log("Selection happenned");
+      if (select.anchorNode && select.anchorNode.parentElement) {
+        select.anchorNode.parentElement.style.backgroundColor = "white";
+        select.anchorNode.parentElement.style.fontSize = "20px";
+        select.anchorNode.parentElement.style.fontFamily = "Verdana";
+      }
+    }
+
+    console.log(select.anchorNode.parentElement);
+  };
+
+  function handleText(event) {}
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -76,25 +70,22 @@ export default function WordPad({ setPage }) {
   }, [isSelecting]);
 
   return (
-    // <StyledContainer font={font}>
     <div className="pad">
       <div className="page">
         <p
           contentEditable="true"
           className="edit-para"
           onInput={handleSomething}
-          onSelect={handleText}
+          onMouseUp={handleSelect}
+          onMouseDown={handleSelect}
+          ref={pRef}
+          onKeyDown={handleEnter}
           style={{
-            // fontFamily: `"${font}",sans-serif`,
-            // fontWeight: bold,
-            // fontStyle: style,
-            // fontSize: `${size}px`,
             lineHeight: "1.5",
           }}
         ></p>
         {select && <Selection style={{ position: "absolute" }} />}
       </div>
     </div>
-    //  </StyledContainer>
   );
 }

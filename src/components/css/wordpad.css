@@ -9,16 +9,13 @@
   height: 48cm;
   width: 25cm;
   text-indent: 40px;
-  /* padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 50px;
-  padding-bottom: 50px; */
   background-color: white;
   border: 2px solid grey;
   overflow: auto;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  margin: 5%;
 }
 .page:focus {
   outline: none;
@@ -27,7 +24,5 @@
   outline: none;
 }
 .edit-para {
-  margin: 60px;
-  margin-top: 60px;
-  margin-bottom: 60px;
+  margin: 100px;
 }
