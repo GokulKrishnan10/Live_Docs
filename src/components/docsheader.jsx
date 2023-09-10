@@ -1,7 +1,14 @@
 import "./css/docsheader.css";
-import DescriptionIcon from "@mui/icons-material/Description";
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
+import { File } from "./tools/file";
+import { Edit } from "./tools/edit";
+import { View } from "./tools/view";
+import { Insert } from "./tools/insert";
+import { Format } from "./tools/format";
+import { Tools } from "./tools/tools";
+import { Extensions } from "./tools/extensions";
+import { Help } from "./tools/help";
 
 export default function DocsHeader() {
   const handleKeyDown = (event) => {
@@ -46,97 +53,74 @@ export default function DocsHeader() {
 
   return (
     <div className="header">
-      <DescriptionIcon
-        style={{
-          transform: "scale(1.7)",
-          margin: "20px",
-          marginLeft: "30px",
-          color: "#4285f4",
-        }}
-      />
+      <div style={{ display: "flex", alignItems: "center", marginLeft: "1%" }}>
+        <img
+          src="https://www.gstatic.com/images/branding/product/1x/docs_2020q4_48dp.png"
+          alt="docs"
+          height={"40px"}
+        />
+      </div>
 
       <div className="docs-title">
-        <h7
-          style={{ marginTop: "10px", color: "black", fontSize: "20px" }}
-          contentEditable="true"
-          spellCheck="false"
-          onKeyDown={handleKeyDown}
-          className="docsTitle"
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            marginTop: "1%",
+            marginLeft: "2%",
+          }}
         >
-          Untitled Document
-        </h7>
+          <div
+            style={{ marginTop: "10px", color: "black", fontSize: "18px" }}
+            contentEditable="true"
+            spellCheck="false"
+            onKeyDown={handleKeyDown}
+            className="docsTitle"
+          >
+            Untitled Document
+          </div>
+        </div>
+
         <div className="buttons">
           <ul>
             <li onClick={() => setFile(!file)}>
               File
-              {file && (
-                <div className="pop">
-                  <ul>{arr}</ul>
-                </div>
-              )}
+              {file && <File />}
             </li>
 
             <li onClick={() => setEdit(!edit)}>
               Edit
-              {edit && (
-                <div className="pop">
-                  <ul>{arr}</ul>
-                </div>
-              )}
+              {edit && <Edit />}
             </li>
 
             <li onClick={() => setView(!view)}>
               View
-              {view && (
-                <div className="pop">
-                  <ul>{arr}</ul>
-                </div>
-              )}
+              {view && <View />}
             </li>
 
             <li onClick={() => setInsert(!insert)}>
               Insert
-              {insert && (
-                <div className="pop">
-                  <ul>{arr}</ul>
-                </div>
-              )}
+              {insert && <Insert />}
             </li>
 
             <li onClick={() => setFormat(!format)}>
               Format
-              {format && (
-                <div className="pop">
-                  <ul>{arr}</ul>
-                </div>
-              )}
+              {format && <Format />}
             </li>
 
             <li onClick={() => setTools(!tools)}>
               Tools
-              {tools && (
-                <div className="pop">
-                  <ul>{arr}</ul>
-                </div>
-              )}
+              {tools && <Tools />}
             </li>
 
             <li onClick={() => setExtensions(!extensions)}>
               Extensions
-              {extensions && (
-                <div className="pop">
-                  <ul>{arr}</ul>
-                </div>
-              )}
+              {extensions && <Extensions />}
             </li>
 
             <li onClick={() => setHelp(true)} ref={selectRef}>
               Help
-              {help && (
-                <div className="pop" ref={helpRef}>
-                  <ul style={{ listStyle: "disc" }}>{arr}</ul>
-                </div>
-              )}
+              {help && <Help />}
             </li>
           </ul>
         </div>
@@ -147,6 +131,7 @@ export default function DocsHeader() {
           style={{
             display: "flex",
             flexDirection: "row",
+            alignItems: "center",
             marginTop: "2.5%",
             marginRight: "4%",
           }}
@@ -163,14 +148,15 @@ export default function DocsHeader() {
           >
             videocam
           </span>
-          <span
-            class="material-symbols-outlined"
-            style={{ marginTop: "7%", marginRight: "7%", fontSize: "30px" }}
-          >
-            apps
-          </span>
         </div>
-        <div style={{ marginLeft: "5%", marginRight: "5%" }}>
+        <div
+          style={{
+            marginLeft: "5%",
+            marginRight: "5%",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
           <Link to="/signup">
             <button className="signUp">Sign Up</button>
           </Link>

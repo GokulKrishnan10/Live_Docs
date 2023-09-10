@@ -7,15 +7,17 @@
 
 .header {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   height: 65px;
   margin: 0px;
 }
 .input-wrapper {
   margin: 10px;
-  width: 5cm;
-  border-radius: 20px;
+  /* width: 5cm; */
+  border-radius: 10px;
   margin-right: 10%;
-  margin-left: 25%;
+  margin-left: 10%;
   background-color: #f1f3f4;
 }
 
@@ -24,11 +26,21 @@
     width: 100%;
   }
 }
+@media (max-width: 1050px) {
+  p {
+    font-size: 20px !important;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 .apps {
   cursor: pointer;
 }
 .signUp {
-  background-color: aqua;
+  background-color: black;
+  color: white;
   margin: 10px;
   width: 100px;
   border-radius: 20px;

@@ -5,7 +5,7 @@ const initialValue = {
   select: false,
   position: { x: 0, y: 0 },
   font: "",
-  bold: "300",
+  bold: "400",
   italic: "normal",
   size: "17",
   value: true,
@@ -40,12 +40,14 @@ function storeReduce(state = initialValue, actions) {
       };
     }
     case "change-bold": {
+      console.log("Bold or not", actions.payload);
       return {
         ...state,
         bold: actions.payload,
       };
     }
     case "set-italic": {
+      console.log("Italic is being set or not", actions.payload);
       return {
         ...state,
         italic: actions.payload,

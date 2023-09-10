@@ -2,6 +2,7 @@ import "./css/options.css";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useDispatch } from "react-redux";
 import { changeHeader } from "./redux/actions";
+import { useRef } from "react";
 export default function Options() {
   const fonts1 = [
     "Select Font style",
@@ -21,6 +22,7 @@ export default function Options() {
     "Ubuntu",
     "Droid Sans",
   ];
+  const fileRef = useRef();
   const options = [<option>{"Select Font size"}</option>];
   for (let i = 7; i <= 60; i++) {
     options.push(
@@ -41,8 +43,23 @@ export default function Options() {
     dispatch(changeHeader(true));
   };
 
+  const getImage = () => {
+    fileRef.current.click();
+    console.log(fileRef.current);
+  };
+
+  const handleFileChange = (event) => {
+    console.log(event.target.files);
+  };
+
   return (
     <div className="options-container">
+      <input
+        type="file"
+        style={{ display: "none" }}
+        ref={fileRef}
+        onChange={handleFileChange}
+      />
       <div className="options-class">
         <div className="icons">
           <div className="reverse-options">
@@ -79,7 +96,9 @@ export default function Options() {
           <div className="line"></div>
           <span class="material-symbols-outlined">link</span>
           <span class="material-symbols-outlined">add_comment</span>
-          <span class="material-symbols-outlined">image</span>
+          <span class="material-symbols-outlined" onClick={getImage}>
+            image
+          </span>
           <div className="line"></div>
           <div className="inc-dec">
             <span class="material-symbols-outlined">

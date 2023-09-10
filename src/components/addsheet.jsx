@@ -5,9 +5,9 @@ export default function AddSheet() {
     <div>
       <div className="sheet">
         <br />
-        <img src={add} alt="" style={{ height: "200px", marginLeft: "0%" }} />
+        <img src={add} alt="" style={{ height: "120px", marginLeft: "0%" }} />
       </div>
-      Create a New Document
+      Blank
     </div>
   );
 }

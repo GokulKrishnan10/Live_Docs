@@ -14,6 +14,7 @@ export default function WordPad({ setPage }) {
   const dispatch = useDispatch();
   const [isSelecting, setIsSelecting] = useState(false);
   const pRef = useRef();
+  console.log("Select is", select);
   function handleSomething(event) {
     const height = document.querySelector(".page").offsetHeight;
     const h = event.target.offsetHeight;
@@ -65,7 +66,6 @@ export default function WordPad({ setPage }) {
     if (select.anchorNode && string.length > 0) {
       const node = select.anchorNode;
       const range = select.getRangeAt(0);
-
       console.log("Range is", range);
       console.log("Selection happenned", font, size);
       console.log("Node is", node.parentElement);
@@ -77,7 +77,8 @@ export default function WordPad({ setPage }) {
         div.style.backgroundColor = "white";
         div.style.fontSize = `${size}px`;
         div.style.fontFamily = font;
-
+        div.style.fontWeight = bold;
+        div.style.fontStyle = style;
         node.parentElement.append(div);
         range.deleteContents();
       }
@@ -88,7 +89,7 @@ export default function WordPad({ setPage }) {
 
   useEffect(() => {
     textChange("hello");
-  }, [font, size]);
+  }, [font, size, bold, style]);
 
   return (
     <div className="pad">
@@ -98,7 +99,7 @@ export default function WordPad({ setPage }) {
           className="edit-para"
           onInput={handleSomething}
           onMouseUp={handleSelect}
-          onMouseDown={handleSelect}
+          // onMouseDown={handleSelect}
           ref={pRef}
           onKeyDown={handleEnter}
           style={{

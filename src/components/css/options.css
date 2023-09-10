@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=REM");
 
 .options-class {
-  background-color: #f1f3f4;
+  background-color: #edf2fa;
   border-radius: 30px;
   display: flex;
   height: 45px;
@@ -10,9 +10,10 @@
 }
 
 .options-container {
-  background-color: white;
+  background-color: #f9fbfd;
   flex-direction: row;
   height: 70px;
+  margin-top: 0.2%;
 }
 
 .material-symbols-outlined {

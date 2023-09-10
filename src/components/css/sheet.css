@@ -1,10 +1,15 @@
 .sheet {
-  width: 170px;
-  height: 240px;
+  width: 140px;
+  height: 180px;
   background-color: white;
   margin: 10px;
-  border: 1px solid black;
+  border: 1px solid #b0a9a9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
 }
 .sheet:hover {
   cursor: pointer;
+  border: 1px solid skyblue;
 }
