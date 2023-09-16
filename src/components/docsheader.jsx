@@ -17,9 +17,6 @@ export default function DocsHeader() {
     }
   };
 
-  const selectRef = useRef();
-  const helpRef = useRef();
-
   const arr = [];
 
   for (let i = 0; i < 10; i++) arr.push(<li key={i}>{"Print"}</li>);
@@ -32,18 +29,42 @@ export default function DocsHeader() {
   const [tools, setTools] = useState(false);
   const [extensions, setExtensions] = useState(false);
   const [help, setHelp] = useState(false);
+  const fileRef = useRef(null);
+  const editRef = useRef(null);
+  const viewRef = useRef(null);
+  const insertRef = useRef(null);
+  const formatRef = useRef(null);
+  const toolsRef = useRef(null);
+  const extensionsRef = useRef(null);
+  const helpRef = useRef(null);
 
-  // function handle() {
-  //   setFile(!file);
-  // }
   useEffect(() => {
     function handle(event) {
-      console.log(selectRef.current, event.target.classList, helpRef.current);
+      if (fileRef.current && !fileRef.current.contains(event.target)) {
+        setFile(false);
+      }
+      if (editRef.current && !editRef.current.contains(event.target)) {
+        setEdit(false);
+      }
+      if (viewRef.current && !viewRef.current.contains(event.target)) {
+        setView(false);
+      }
+      if (insertRef.current && !insertRef.current.contains(event.target)) {
+        setInsert(false);
+      }
+      if (formatRef.current && !formatRef.current.contains(event.target)) {
+        setFormat(false);
+      }
+      if (toolsRef.current && !toolsRef.current.contains(event.target)) {
+        setTools(false);
+      }
       if (
-        !selectRef.current?.contains(event.target) &&
-        !helpRef.current?.contains(event.target) &&
-        event.target.className !== "pop"
+        extensionsRef.current &&
+        !extensionsRef.current.contains(event.target)
       ) {
+        setExtensions(false);
+      }
+      if (helpRef.current && !helpRef.current.contains(event.target)) {
         setHelp(false);
       }
     }
@@ -83,43 +104,48 @@ export default function DocsHeader() {
 
         <div className="buttons">
           <ul>
-            <li onClick={() => setFile(!file)}>
-              File
-              {file && <File />}
+            <li ref={fileRef}>
+              <div onClick={() => setFile(!file)}>File</div>
+              {file && (
+                <div>
+                  <File />
+                </div>
+              )}
             </li>
 
-            <li onClick={() => setEdit(!edit)}>
-              Edit
+            <li ref={editRef}>
+              <div onClick={() => setEdit(!edit)}>Edit</div>
               {edit && <Edit />}
             </li>
 
-            <li onClick={() => setView(!view)}>
-              View
+            <li ref={viewRef}>
+              <div onClick={() => setView(!view)}>View</div>
+
               {view && <View />}
             </li>
 
-            <li onClick={() => setInsert(!insert)}>
-              Insert
+            <li ref={insertRef}>
+              <div onClick={() => setInsert(!insert)}>Insert</div>
               {insert && <Insert />}
             </li>
 
-            <li onClick={() => setFormat(!format)}>
-              Format
+            <li ref={formatRef}>
+              <div onClick={() => setFormat(!format)}>Format</div>
               {format && <Format />}
             </li>
 
-            <li onClick={() => setTools(!tools)}>
-              Tools
+            <li ref={toolsRef}>
+              <div onClick={() => setTools(!tools)}>Tools</div>
               {tools && <Tools />}
             </li>
 
-            <li onClick={() => setExtensions(!extensions)}>
-              Extensions
+            <li ref={extensionsRef}>
+              <div onClick={() => setExtensions(!extensions)}>Extensions</div>
               {extensions && <Extensions />}
             </li>
 
-            <li onClick={() => setHelp(true)} ref={selectRef}>
-              Help
+            <li ref={helpRef}>
+              <div onClick={() => setHelp(!help)}>Help</div>
               {help && <Help />}
             </li>
           </ul>
@@ -158,7 +184,9 @@ export default function DocsHeader() {
           }}
         >
           <Link to="/signup">
-            <button className="signUp">Sign Up</button>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <button className="signUp">Sign Up</button>
+            </div>
           </Link>
         </div>
       </div>
