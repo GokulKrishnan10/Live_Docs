@@ -5,7 +5,12 @@ export function File() {
       <div className="docs-options-container">
         <div className="docs-edit">
           <div className="docs-editdesign">
-            <span className="article material-symbols-outlined">article</span>
+            <span
+              className="article material-symbols-outlined"
+              style={{ fontSize: "20px" }}
+            >
+              article
+            </span>
             <div className="docs-original">New</div>
           </div>
           <div>
@@ -40,7 +45,7 @@ export function File() {
             <div className="docs-original">Email</div>
           </div>
           <div>
-            <span class="material-symbols-outlined">arrow_right</span>
+            <span class="icon1 material-symbols-outlined">arrow_right</span>
           </div>
         </div>
         <div className="docs-edit">

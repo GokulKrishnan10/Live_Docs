@@ -1,19 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
-@import url("https://fonts.googleapis.com/css2?family=REM");
 
 .options-class {
   background-color: #edf2fa;
   border-radius: 30px;
   display: flex;
-  height: 45px;
+  height: 40px;
   margin: 10px;
+  /* justify-content: space-between; */
 }
 
 .options-container {
   background-color: #f9fbfd;
   flex-direction: row;
   height: 70px;
-  margin-top: 0.2%;
+}
+.last {
+  display: flex;
+  margin-top: 10px;
+  justify-content: flex-end;
+  width: 100%;
+  margin-right: 2%;
 }
 
 .material-symbols-outlined {
@@ -27,7 +33,6 @@
 
 span {
   margin-left: 25px;
-  font-size: 10px;
 }
 
 .first-icons {
@@ -43,20 +48,29 @@ span:hover {
   cursor: pointer;
 }
 
+.docs-image-icon {
+  display: flex;
+}
+
 select {
-  font-family: "REM", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: #edf2fa;
+  border-top: none;
+  border-bottom: none;
+  border-radius: 0px;
 }
 
 .selects {
   display: flex;
 }
 
-.line {
+/* .line {
   background-color: grey;
   width: 1.5px;
-  height: 30px;
-  margin-left: 10px;
-}
+  height: 20px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+} */
 
 .inc-dec {
   display: flex;
@@ -64,6 +78,7 @@ select {
 
 .font-styles {
   display: flex;
+  justify-content: center;
 }
 
 @media (max-width: 1300px) {
@@ -86,6 +101,29 @@ select {
 
 @media (max-width: 500px) {
   .reverse-options {
+    display: none;
+  }
+}
+
+.reverse-options {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 565px) {
+  .last {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  .docs-image-icon {
+    display: none;
+  }
+}
+
+@media (max-width: 300px) {
+  .options-class {
     display: none;
   }
 }

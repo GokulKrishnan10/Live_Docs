@@ -4,56 +4,84 @@ export function Tools() {
     <div className="file-tools">
       <div className="docs-options-container">
         <div className="docs-edit">
-          <span className="article material-symbols-outlined">undo</span>
-          <div>Spelling and Grammar</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">text_rotation_none</span>
+            <div className="docs-original">Spelling and Grammar</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span className="material-symbols-outlined">redo</span>
-          <div>Wprd count</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">article</span>
+            <div className="docs-original">Word count</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">cut</span>
-          <div>Review suggested edits</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">rate_review</span>
+            <div className="docs-original">Review suggested edits</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">content_copy</span>
-          <div>Compare Documents</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">compare_arrows</span>
+            <div className="docs-original">Compare Documents</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">content_paste</span>
-          <div>Paste</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">format_quote</span>
+            <div className="docs-original">Citations</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">content_paste_go</span>
-          <div>Citations</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">explore</span>
+            <div className="docs-original">Explore</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">select_all</span>
-          <div>Explore</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">dataset_linked</span>
+            <div className="docs-original">Linked Objects</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">delete</span>
-          <div>Linked Objects</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">dictionary</span>
+            <div className="docs-original">Dictionary</div>
+          </div>
+        </div>
+        <hr style={{ width: "100%" }}></hr>
+        <div className="docs-edit">
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">translate</span>
+            <div className="docs-original">Translate Document</div>
+          </div>
+        </div>
+        <hr style={{ width: "100%" }}></hr>
+        <div className="docs-edit">
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">find_replace</span>
+            <div className="docs-original">Voice typing</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">find_replace</span>
-          <div>Translate Document</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">notifications</span>
+            <div className="docs-original">Notification setting</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">find_replace</span>
-          <div>Voice typing</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">manage_accounts</span>
+            <div className="docs-original">Preferences</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">find_replace</span>
-          <div>Notification setting</div>
-        </div>
-        <div className="docs-edit">
-          <span class="material-symbols-outlined">find_replace</span>
-          <div>Preferences</div>
-        </div>
-        <div className="docs-edit">
-          <span class="material-symbols-outlined">find_replace</span>
-          <div>Accessability</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">accessibility</span>
+            <div className="docs-original">Accessability</div>
+          </div>
         </div>
       </div>
     </div>

@@ -4,52 +4,87 @@ export function Format() {
     <div className="file-tools">
       <div className="docs-options-container">
         <div className="docs-edit">
-          <span className="article material-symbols-outlined">undo</span>
-          <div>Text</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">format_bold</span>
+            <div className="docs-original">Text</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span className="material-symbols-outlined">redo</span>
-          <div>Paragraph Texts</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">view_headline</span>
+            <div className="docs-original">Paragraph Texts</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">cut</span>
-          <div>Align and indent</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">
+              format_indent_increase
+            </span>
+            <div className="docs-original">Align and indent</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">content_copy</span>
-          <div>Line & Spacing</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">format_line_spacing</span>
+            <div className="docs-original">Line & Spacing</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">content_paste</span>
-          <div>Columns</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">view_column</span>
+            <div className="docs-original">Columns</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">content_paste_go</span>
-          <div>Bullets and numbering</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">format_list_bulleted</span>
+            <div className="docs-original">Bullets and numbering</div>
+          </div>
+        </div>
+        <hr style={{ width: "100%" }}></hr>
+        <div className="docs-edit">
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">scrollable_header</span>
+            <div className="docs-original">Headers and Footers</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">select_all</span>
-          <div>Page numbers</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">tag</span>
+            <div className="docs-original">Page numbers</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">delete</span>
-          <div>Page orientation</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">edit_document</span>
+            <div className="docs-original">Page orientation</div>
+          </div>
+        </div>
+        <hr style={{ width: "100%" }}></hr>
+        <div className="docs-edit">
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">table_chart</span>
+            <div className="docs-original">Table</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">find_replace</span>
-          <div>Table</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">image</span>
+            <div className="docs-original">Image</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">find_replace</span>
-          <div>Image</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">horizontal_rule</span>
+            <div className="docs-original">Borders and lines</div>
+          </div>
         </div>
+        <hr style={{ width: "100%" }}></hr>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">find_replace</span>
-          <div>Borders and lines</div>
-        </div>
-        <div className="docs-edit">
-          <span class="material-symbols-outlined">find_replace</span>
-          <div>Clear Formatting</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">format_clear</span>
+            <div className="docs-original">Clear Formatting</div>
+          </div>
         </div>
       </div>
     </div>

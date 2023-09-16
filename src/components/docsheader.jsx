@@ -29,6 +29,7 @@ export default function DocsHeader() {
   const [tools, setTools] = useState(false);
   const [extensions, setExtensions] = useState(false);
   const [help, setHelp] = useState(false);
+
   const fileRef = useRef(null);
   const editRef = useRef(null);
   const viewRef = useRef(null);
@@ -105,7 +106,9 @@ export default function DocsHeader() {
         <div className="buttons">
           <ul>
             <li ref={fileRef}>
-              <div onClick={() => setFile(!file)}>File</div>
+              <div onClick={() => setFile(!file)} className="docs-options">
+                File
+              </div>
               {file && (
                 <div>
                   <File />
@@ -114,38 +117,55 @@ export default function DocsHeader() {
             </li>
 
             <li ref={editRef}>
-              <div onClick={() => setEdit(!edit)}>Edit</div>
+              <div onClick={() => setEdit(!edit)} className="docs-options">
+                Edit
+              </div>
               {edit && <Edit />}
             </li>
 
             <li ref={viewRef}>
-              <div onClick={() => setView(!view)}>View</div>
+              <div onClick={() => setView(!view)} className="docs-options">
+                View
+              </div>
 
               {view && <View />}
             </li>
 
             <li ref={insertRef}>
-              <div onClick={() => setInsert(!insert)}>Insert</div>
+              <div onClick={() => setInsert(!insert)} className="docs-options">
+                Insert
+              </div>
               {insert && <Insert />}
             </li>
 
             <li ref={formatRef}>
-              <div onClick={() => setFormat(!format)}>Format</div>
+              <div onClick={() => setFormat(!format)} className="docs-options">
+                Format
+              </div>
               {format && <Format />}
             </li>
 
             <li ref={toolsRef}>
-              <div onClick={() => setTools(!tools)}>Tools</div>
+              <div onClick={() => setTools(!tools)} className="docs-options">
+                Tools
+              </div>
               {tools && <Tools />}
             </li>
 
             <li ref={extensionsRef}>
-              <div onClick={() => setExtensions(!extensions)}>Extensions</div>
+              <div
+                onClick={() => setExtensions(!extensions)}
+                className="docs-options"
+              >
+                Extensions
+              </div>
               {extensions && <Extensions />}
             </li>
 
             <li ref={helpRef}>
-              <div onClick={() => setHelp(!help)}>Help</div>
+              <div onClick={() => setHelp(!help)} className="docs-options">
+                Help
+              </div>
               {help && <Help />}
             </li>
           </ul>

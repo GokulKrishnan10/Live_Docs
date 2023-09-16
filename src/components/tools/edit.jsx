@@ -6,7 +6,7 @@ export function Edit() {
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span className="article material-symbols-outlined">undo</span>
-            <div className="text">Undo</div>
+            <div className="docs-original">Undo</div>
           </div>
         </div>
         <div className="docs-edit">
@@ -38,26 +38,26 @@ export function Edit() {
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">content_paste_go</span>
-            <div className="text">Paste without formatting</div>
+            <div className="docs-original">Paste without formatting</div>
           </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">select_all</span>
-            <div className="text">Select All</div>
+            <div className="docs-original">Select All</div>
           </div>
         </div>
         <hr style={{ width: "100%" }}></hr>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">delete</span>
-            <div className="text">Delete</div>
+            <div className="docs-original">Delete</div>
           </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">find_replace</span>
-            <div className="text">Find and replace</div>
+            <div className="docs-original">Find and replace</div>
           </div>
         </div>
       </div>

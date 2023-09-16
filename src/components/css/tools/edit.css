@@ -15,10 +15,35 @@
   border-bottom-right-radius: 5px;
 }
 
+.insert::-webkit-scrollbar {
+  width: 6px;
+}
+
+.insert::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+.insert::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: grey;
+  border-radius: 10px;
+}
+
 .docs-editdesign {
   display: flex;
   flex-direction: row;
-  /* padding: 2%; */
 }
 
 .docs-original {

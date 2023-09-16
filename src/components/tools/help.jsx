@@ -4,40 +4,62 @@ export function Help() {
     <div className="file-tools">
       <div className="docs-options-container">
         <div className="docs-edit">
-          <span className="article material-symbols-outlined">undo</span>
-          <div>Search the menus</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">search</span>
+            <div className="docs-original">Search the menus</div>
+          </div>
+        </div>
+        <hr style={{ width: "100%" }}></hr>
+        <div className="docs-edit">
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">help</span>
+            <div className="docs-original">Help</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span className="material-symbols-outlined">redo</span>
-          <div>Help</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">school</span>
+            <div className="docs-original">Training</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">cut</span>
-          <div>Training</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">podcasts</span>
+            <div className="docs-original">Updates</div>
+          </div>
+        </div>
+        <hr style={{ width: "100%" }}></hr>
+        <div className="docs-edit">
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">feedback</span>
+            <div className="docs-original">Help Docs improve</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">content_copy</span>
-          <div>Updates</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">warning</span>
+            <div className="docs-original">Report Abuse</div>
+          </div>
+        </div>
+        <hr style={{ width: "100%" }}></hr>
+        <div className="docs-edit">
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">article</span>
+            <div className="docs-original">Privacy policy</div>
+          </div>
         </div>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">content_paste</span>
-          <div>Help Docs improve</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">article</span>
+            <div className="docs-original">Terms of service</div>
+          </div>
         </div>
+        <hr style={{ width: "100%" }}></hr>
         <div className="docs-edit">
-          <span class="material-symbols-outlined">content_paste_go</span>
-          <div>Report Abuse</div>
-        </div>
-        <div className="docs-edit">
-          <span class="material-symbols-outlined">select_all</span>
-          <div>Privacy policy</div>
-        </div>
-        <div className="docs-edit">
-          <span class="material-symbols-outlined">delete</span>
-          <div>Terms of service</div>
-        </div>
-        <div className="docs-edit">
-          <span class="material-symbols-outlined">find_replace</span>
-          <div>Keyboard shortcuts</div>
+          <div className="docs-editdesign">
+            <span class="material-symbols-outlined">keyboard</span>
+            <div className="docs-original">Keyboard shortcuts</div>
+          </div>
         </div>
       </div>
     </div>
