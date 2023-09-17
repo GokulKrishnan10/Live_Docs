@@ -1,0 +1,27 @@
+.docs-image-rightclick {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+  box-shadow: 5px 5px 5px 5px lightgrey;
+  width: 6cm;
+  border-radius: 5px;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 10%;
+}
+.docs-image-container {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.docs-image-options {
+  font-size: 15px;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.docs-image-options:hover {
+  cursor: pointer;
+}
+.img-docs {
+  display: flex;
+  flex-direction: row;
+}

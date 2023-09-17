@@ -2,6 +2,7 @@ import "./css/options.css";
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useDispatch } from "react-redux";
 import { changeHeader } from "./redux/actions";
+import { insertImage } from "./redux/actions";
 import { useRef } from "react";
 export default function Options() {
   const fonts1 = [
@@ -48,8 +49,16 @@ export default function Options() {
     console.log(fileRef.current);
   };
 
-  const handleFileChange = (event) => {
-    console.log(event.target.files);
+  const handleFileChange = async (event) => {
+    //console.log(event.target.files);
+    console.log("Hello=---------->", event.target.files[0]);
+    const fReader = new FileReader();
+    fReader.onload = (result) => {
+      console.log("Image result URL------->", result, fReader?.result);
+      const data = fReader?.result;
+      dispatch(insertImage(data));
+    };
+    fReader.readAsDataURL(event.target.files[0]);
   };
 
   return (
@@ -65,31 +74,31 @@ export default function Options() {
           <div className="icons">
             <div className="reverse-options">
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 search
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 undo
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 redo
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 print
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 imagesearch_roller
@@ -114,25 +123,25 @@ export default function Options() {
             <div className="font-styles">
               <div className="line"></div>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 format_bold
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 format_italic
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 format_underlined
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 ink_highlighter
@@ -142,19 +151,19 @@ export default function Options() {
             <div className="line"></div>
             <div className="docs-image-icon">
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 link
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 add_comment
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
                 onClick={getImage}
               >
@@ -165,25 +174,25 @@ export default function Options() {
             <div className="line"></div>
             <div className="inc-dec">
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 format_indent_decrease
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 format_indent_increase
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 format_list_bulleted
               </span>
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
               >
                 format_list_numbered
@@ -201,7 +210,7 @@ export default function Options() {
           >
             Editing
             <span
-              style={{ fontSize: "20px" }}
+              style={{ fontSize: "20px", marginLeft: "25px" }}
               class="material-symbols-outlined"
             >
               edit
@@ -212,7 +221,7 @@ export default function Options() {
           <div>
             {!value && (
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
                 onClick={displayHeader1}
               >
@@ -221,7 +230,7 @@ export default function Options() {
             )}
             {value && (
               <span
-                style={{ fontSize: "20px" }}
+                style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
                 onClick={displayHeader}
               >

@@ -9,6 +9,8 @@ const initialValue = {
   italic: "normal",
   size: "17",
   value: true,
+  image: [],
+  imageSettings: false,
 };
 function storeReduce(state = initialValue, actions) {
   switch (actions.type) {
@@ -65,6 +67,22 @@ function storeReduce(state = initialValue, actions) {
       return {
         ...state,
         value: actions.payload,
+      };
+    }
+    case "insert-image": {
+      console.log(
+        "new data for insert image==================================>",
+        actions.payload
+      );
+      return {
+        ...state,
+        image: [...state.image, actions.payload],
+      };
+    }
+    case "image-settings": {
+      return {
+        ...state,
+        imageSettings: actions.payload,
       };
     }
     default:

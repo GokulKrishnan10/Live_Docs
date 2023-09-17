@@ -30,3 +30,11 @@ export const changeHeader = (value) => ({
   type: "set-display",
   payload: value,
 });
+export const insertImage = (value) => ({
+  type: "insert-image",
+  payload: value,
+});
+export const displayImageSettings = (value) => ({
+  type: "image-settings",
+  payload: value,
+});
