@@ -30,6 +30,12 @@
   border-radius: 10px;
 }
 
+.docs-title-editable {
+  margin-top: 10px;
+  color: black;
+  font-size: 18px;
+}
+
 .input-wrapper {
   display: flex;
   justify-content: center;
@@ -93,8 +99,15 @@ h7 {
     display: none !important;
     background-color: red;
   }
-  .docsTitle {
-    font-size: 20px;
+  .docs-title-editable {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .docs-title-editable {
+    font-size: 15px;
   }
 }
 .app-container {

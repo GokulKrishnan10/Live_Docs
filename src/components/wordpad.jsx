@@ -7,6 +7,7 @@ import { displayImageSettings } from "./redux/actions";
 import { openOnSelect } from "./redux/actions";
 import { ImageClick } from "./imageclick";
 import { RightClick } from "./rightclick";
+import { setRightClick } from "./redux/actions";
 
 export default function WordPad({ setPage }) {
   const select = useSelector((state) => state.select);
@@ -16,6 +17,7 @@ export default function WordPad({ setPage }) {
   const size = useSelector((state) => state.size);
   const image = useSelector((state) => state.image);
   const imageSettings = useSelector((state) => state.imageSettings);
+  const rightClick = useSelector((state) => state.globalRightClick);
   const dispatch = useDispatch();
   const [isSelecting, setIsSelecting] = useState(false);
   const pRef = useRef();
@@ -93,6 +95,8 @@ export default function WordPad({ setPage }) {
 
   const handleRightPad = (event) => {
     event.preventDefault();
+    event.stopPropagation();
+    dispatch(setRightClick(true));
   };
 
   useEffect(() => {
@@ -100,32 +104,35 @@ export default function WordPad({ setPage }) {
   }, [font, size, bold, style]);
 
   return (
-    <div className="pad" onContextMenu={handleRightPad}>
-      <div className="page">
-        {image?.slice(-1) &&
-          image.map((img) => (
-            <img
-              src={img}
-              alt="insertion"
-              height={"400px"}
-              width={"250px"}
-              onContextMenu={displayImageRightClick}
-            />
-          ))}
-        {imageSettings && <ImageClick />}
-        <p
-          contentEditable="true"
-          className="edit-para"
-          onInput={handleSomething}
-          onMouseUp={handleSelect}
-          ref={pRef}
-          onKeyDown={handleEnter}
-          style={{
-            lineHeight: "1.5",
-          }}
-        ></p>
-        {select && <Selection style={{ position: "absolute" }} />}
+    <>
+      {imageSettings && <ImageClick />}
+      {rightClick && <RightClick />}
+      <div className="pad" onContextMenu={handleRightPad}>
+        <div className="page">
+          {image?.slice(-1) &&
+            image.map((img) => (
+              <img
+                src={img}
+                alt="insertion"
+                height={"400px"}
+                width={"250px"}
+                onContextMenu={displayImageRightClick}
+              />
+            ))}
+          <p
+            contentEditable="true"
+            className="edit-para"
+            onInput={handleSomething}
+            onMouseUp={handleSelect}
+            ref={pRef}
+            onKeyDown={handleEnter}
+            style={{
+              lineHeight: "1.5",
+            }}
+          ></p>
+          {select && <Selection style={{ position: "absolute" }} />}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

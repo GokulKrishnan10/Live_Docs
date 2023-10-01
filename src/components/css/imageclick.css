@@ -15,7 +15,7 @@
 }
 .docs-image-options {
   font-size: 15px;
-  margin: 0;
+  margin-left: 2%;
   font-family: "Roboto", sans-serif;
 }
 .docs-image-options:hover {
@@ -24,4 +24,8 @@
 .img-docs {
   display: flex;
   flex-direction: row;
+  margin: 2%;
 }
+/* .click {
+  font-size: 20px;
+} */

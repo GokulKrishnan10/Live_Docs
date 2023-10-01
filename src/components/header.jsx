@@ -10,6 +10,7 @@ export default function Header() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            marginLeft: "20px",
           }}
         >
           <span

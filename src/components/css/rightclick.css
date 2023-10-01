@@ -1,29 +1,33 @@
 .docs-rightclick {
-  /* display: flex; */
-  /* flex-direction: column; */
   background-color: whitesmoke;
   font-size: 15px;
   font-family: "Roboto", sans-serif;
   position: absolute;
-  margin: 5%;
+  margin-top: 20%;
+  margin-left: 40%;
   border-radius: 10px;
 }
 .docs-rightclick-contain {
   margin-top: 3%;
-  /* margin-right: %; */
   margin-bottom: 3%;
 }
 hr {
   width: 100%;
 }
+.docs-rightclick-element {
+  margin-left: 4%;
+  display: flex;
+  flex-direction: row;
+}
 .docs-rightclick span {
   font-size: 20px;
-  margin: 0px;
+  margin-left: 0px;
   padding: 0px;
 }
 .name {
   display: flex;
   margin-right: 1%;
+  margin-left: 5px;
   width: 6cm;
 }
 

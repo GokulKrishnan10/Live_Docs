@@ -21,10 +21,16 @@
   input {
     width: 100%;
   }
+  .input-wrapper {
+    display: none !important;
+  }
 }
 @media (max-width: 1050px) {
   p {
     font-size: 20px !important;
+  }
+  .input-wrapper {
+    display: none !important;
   }
   .header {
     display: flex;

@@ -38,3 +38,7 @@ export const displayImageSettings = (value) => ({
   type: "image-settings",
   payload: value,
 });
+export const setRightClick = (value) => ({
+  type: "right-click",
+  payload: value,
+});

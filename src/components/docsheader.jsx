@@ -93,13 +93,21 @@ export default function DocsHeader() {
           }}
         >
           <div
-            style={{ marginTop: "10px", color: "black", fontSize: "18px" }}
+            className="docs-title-editable"
             contentEditable="true"
             spellCheck="false"
             onKeyDown={handleKeyDown}
-            className="docsTitle"
           >
             Untitled Document
+          </div>
+          <div
+            style={{
+              display: "flex",
+              marginLeft: "6px",
+              marginTop: "5px",
+            }}
+          >
+            <span class="material-symbols-outlined">star</span>
           </div>
         </div>
 

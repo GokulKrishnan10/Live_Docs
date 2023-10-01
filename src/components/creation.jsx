@@ -10,28 +10,14 @@ export default function Creation() {
 
         <div className="creation">
           <div className="sheets">
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center",
-                width: "26cm",
-              }}
-            >
+            <div className="docs-tilte-card">
               <div> Start a new Document</div>
               <div style={{ display: "flex", flexDirection: "row" }}>
                 <div>Template Gallery</div>
                 <span class="material-symbols-outlined">more_vert</span>
               </div>
             </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "row",
-                marginBottom: "3%",
-              }}
-            >
+            <div className="all-cards">
               <Link to="/docs">
                 <AddSheet />
               </Link>

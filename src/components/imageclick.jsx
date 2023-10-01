@@ -19,50 +19,50 @@ export function ImageClick() {
     <div className="docs-image-rightclick" ref={imageRef}>
       <div className="docs-image-container">
         <div className="img-docs">
-          {/* <span
-            className="material-symbols-outlined"
-            style={{ fontSize: "15px", marginLeft: "1px" }}
+          <span
+            className="material-symbols-outlined click"
+            style={{ fontSize: "21px", marginLeft: "1px" }}
           >
             cut
-          </span> */}
+          </span>
           <div className="docs-image-options">Cut</div>
         </div>
         <hr />
         <div className="img-docs">
-          {/* <span
-            className="material-symbols-outlined"
-            style={{ fontSize: "15px", marginLeft: "1px" }}
+          <span
+            className="material-symbols-outlined click"
+            style={{ fontSize: "21px", marginLeft: "1px" }}
           >
             content_copy
-          </span> */}
+          </span>
           <div className="docs-image-options">Copy</div>
         </div>
         <div className="img-docs">
-          {/* <span
-            className="material-symbols-outlined"
-            style={{ fontSize: "15px", marginLeft: "1px" }}
+          <span
+            className="material-symbols-outlined click"
+            style={{ fontSize: "21px", marginLeft: "1px" }}
           >
             delete
-          </span> */}
+          </span>
           <div className="docs-image-options">Delete</div>
         </div>
         <hr />
         <div className="img-docs">
-          {/* <span
-            className="material-symbols-outlined"
-            style={{ fontSize: "15px", marginLeft: "1px" }}
+          <span
+            className="material-symbols-outlined click"
+            style={{ fontSize: "21px", marginLeft: "1px" }}
           >
             photo_library
-          </span> */}
+          </span>
           <div className="docs-image-options">Copy Image URL</div>
         </div>
         <div className="img-docs">
-          {/* <span
-            className="material-symbols-outlined"
-            style={{ fontSize: "15px", marginLeft: "1px" }}
+          <span
+            className="material-symbols-outlined click"
+            style={{ fontSize: "21px", marginLeft: "1px" }}
           >
             resize
-          </span> */}
+          </span>
           <div className="docs-image-options">Resize</div>
         </div>
       </div>

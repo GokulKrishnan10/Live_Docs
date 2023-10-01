@@ -11,6 +11,7 @@ const initialValue = {
   value: true,
   image: [],
   imageSettings: false,
+  globalRightClick: false,
 };
 function storeReduce(state = initialValue, actions) {
   switch (actions.type) {
@@ -83,6 +84,12 @@ function storeReduce(state = initialValue, actions) {
       return {
         ...state,
         imageSettings: actions.payload,
+      };
+    }
+    case "right-click": {
+      return {
+        ...state,
+        globalRightClick: actions.payload,
       };
     }
     default:
