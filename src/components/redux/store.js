@@ -12,6 +12,7 @@ const initialValue = {
   image: [],
   imageSettings: false,
   globalRightClick: false,
+  page: 1,
 };
 function storeReduce(state = initialValue, actions) {
   switch (actions.type) {
@@ -90,6 +91,13 @@ function storeReduce(state = initialValue, actions) {
       return {
         ...state,
         globalRightClick: actions.payload,
+      };
+    }
+    case "increase-page": {
+      console.log("Updated or not........=========------------>>>>>>");
+      return {
+        ...state,
+        page: actions.payload,
       };
     }
     default:

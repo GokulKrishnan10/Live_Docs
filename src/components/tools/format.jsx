@@ -8,11 +8,17 @@ export function Format() {
             <span class="material-symbols-outlined">format_bold</span>
             <div className="docs-original">Text</div>
           </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
+          </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">view_headline</span>
             <div className="docs-original">Paragraph Texts</div>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
         <div className="docs-edit">
@@ -22,11 +28,17 @@ export function Format() {
             </span>
             <div className="docs-original">Align and indent</div>
           </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
+          </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">format_line_spacing</span>
             <div className="docs-original">Line & Spacing</div>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
         <div className="docs-edit">
@@ -34,11 +46,17 @@ export function Format() {
             <span class="material-symbols-outlined">view_column</span>
             <div className="docs-original">Columns</div>
           </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
+          </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">format_list_bulleted</span>
             <div className="docs-original">Bullets and numbering</div>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
         <hr style={{ width: "100%" }}></hr>
@@ -66,17 +84,26 @@ export function Format() {
             <span class="material-symbols-outlined">table_chart</span>
             <div className="docs-original">Table</div>
           </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
+          </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">image</span>
             <div className="docs-original">Image</div>
           </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
+          </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">horizontal_rule</span>
             <div className="docs-original">Borders and lines</div>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
         <hr style={{ width: "100%" }}></hr>

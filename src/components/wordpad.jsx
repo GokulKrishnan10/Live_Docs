@@ -8,40 +8,49 @@ import { openOnSelect } from "./redux/actions";
 import { ImageClick } from "./imageclick";
 import { RightClick } from "./rightclick";
 import { setRightClick } from "./redux/actions";
+import { setPage } from "./redux/actions";
 
-export default function WordPad({ setPage }) {
+export default function WordPad({ title }) {
   const select = useSelector((state) => state.select);
   const font = useSelector((state) => state.font);
   const bold = useSelector((state) => state.bold);
   const style = useSelector((state) => state.italic);
   const size = useSelector((state) => state.size);
   const image = useSelector((state) => state.image);
+  const page = useSelector((state) => state.page);
   const imageSettings = useSelector((state) => state.imageSettings);
   const rightClick = useSelector((state) => state.globalRightClick);
   const dispatch = useDispatch();
   const [isSelecting, setIsSelecting] = useState(false);
+
   const pRef = useRef();
-  console.log("Select is", select);
+  // console.log("Select is", select);
   function handleSomething(event) {
     const height = document.querySelector(".page").offsetHeight;
     const h = event.target.offsetHeight;
     if (h > height) {
-      setPage((prev) => prev + 1);
+      console.log("Page is changed or not.......");
       return;
     }
   }
 
   function handleEnter(event) {
+    const height = document.querySelector(".page").offsetHeight;
+    const h = event.target.offsetHeight;
     if (event.key === "Enter") {
       const height = document.querySelector(".page").offsetHeight;
       const h = event.target.offsetHeight;
       const p = document.querySelector(".edit-para").offsetHeight;
-      console.log(h, " and height is", height, "p height", p);
-      if (p > 1630) {
-        setPage((prev) => prev + 1);
+      if (h >= 1630) {
+        // console.log(h, " and height is", height, "p height", p);
+        dispatch(setPage(page + 1));
         event.preventDefault();
         return;
       }
+    }
+    if (event.key === "Backspace") {
+      console.log("Height is ", h);
+      console.log("Backspace is being pressed-------------------->>>>>");
     }
   }
 
@@ -103,11 +112,19 @@ export default function WordPad({ setPage }) {
     textChange("hello");
   }, [font, size, bold, style]);
 
+  const pageRef = useRef(null);
+  useEffect(() => {
+    if (pageRef.current) {
+      // console.log("Something is being changed", pageRef.current);
+      pageRef.current.focus();
+    }
+  }, [page]);
+
   return (
     <>
       {imageSettings && <ImageClick />}
       {rightClick && <RightClick />}
-      <div className="pad" onContextMenu={handleRightPad}>
+      <div className={`pad ${title}`} onContextMenu={handleRightPad}>
         <div className="page">
           {image?.slice(-1) &&
             image.map((img) => (
@@ -124,7 +141,7 @@ export default function WordPad({ setPage }) {
             className="edit-para"
             onInput={handleSomething}
             onMouseUp={handleSelect}
-            ref={pRef}
+            ref={pageRef}
             onKeyDown={handleEnter}
             style={{
               lineHeight: "1.5",

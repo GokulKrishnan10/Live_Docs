@@ -8,6 +8,9 @@ export function Tools() {
             <span class="material-symbols-outlined">text_rotation_none</span>
             <div className="docs-original">Spelling and Grammar</div>
           </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
+          </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">

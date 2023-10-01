@@ -11,11 +11,17 @@ export function Insert() {
             <span className="article material-symbols-outlined">image</span>
             <div className="docs-original">Image</div>
           </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
+          </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span className="material-symbols-outlined">draw_abstract</span>
             <div className="docs-original">Table</div>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
         <div className="docs-edit">
@@ -23,11 +29,17 @@ export function Insert() {
             <span class="material-symbols-outlined"></span>
             <div className="docs-original">Drawing</div>
           </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
+          </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">insert_chart </span>
             <div className="docs-original">Chart</div>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
         <div className="docs-edit">
@@ -47,6 +59,9 @@ export function Insert() {
             <span class="material-symbols-outlined">sliders</span>
             <div className="docs-original">Smart chips</div>
           </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
+          </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
@@ -65,6 +80,9 @@ export function Insert() {
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">post_add</span>
             <div className="docs-original">Building blocks</div>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
         <hr style={{ width: "100%" }}></hr>
@@ -86,17 +104,26 @@ export function Insert() {
             <span class="material-symbols-outlined">scrollable_header</span>
             <div className="docs-original">Headers and footers</div>
           </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
+          </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">tag</span>
             <div className="docs-original">Page number</div>
           </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
+          </div>
         </div>
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">insert_page_break</span>
             <div className="docs-original">Break</div>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
         <hr style={{ width: "100%" }}></hr>
@@ -122,6 +149,9 @@ export function Insert() {
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">toc</span>
             <div className="docs-original">Table of Contents</div>
+          </div>
+          <div>
+            <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
       </div>

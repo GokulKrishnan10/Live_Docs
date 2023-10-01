@@ -1,18 +1,28 @@
 import "./css/docs.css";
 import PopUps from "./popups";
 import WordPad from "./wordpad";
-import { useSelector } from "react-redux/es/hooks/useSelector";
+import { useRef, useEffect } from "react";
+import { useSelector } from "react-redux";
 
 import { useState } from "react";
 import { StableHeader } from "./stableheader";
 export default function Docs() {
   const [open, setOpen] = useState(false);
-  const [page, setPage] = useState(1);
+  const page = useSelector((state) => state.page);
   const value = useSelector((state) => state.value);
   let pages = [];
+  const pageRef = useRef(null);
+  // const pageRef = useRef(null);
+  let pcount = 0;
   for (let i = 0; i < page; i++) {
-    pages.push(<WordPad setPage={setPage} />);
+    pcount++;
+    pages.push(<WordPad title={"page" + pcount} />);
   }
+
+  useEffect(() => {
+    console.log("Page is changed");
+  }, [page]);
+
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <StableHeader />

@@ -42,3 +42,7 @@ export const setRightClick = (value) => ({
   type: "right-click",
   payload: value,
 });
+export const setPage = (value) => ({
+  type: "increase-page",
+  payload: value,
+});

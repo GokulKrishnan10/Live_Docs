@@ -20,6 +20,7 @@
 .docs-original {
   margin-left: 3%;
   width: 6cm;
+  /* width: 6.5cm; */
   display: flex;
   align-items: center;
 }
@@ -43,6 +44,7 @@
 .docs-edit {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   width: 100%;
   margin-top: 3%;
 }
