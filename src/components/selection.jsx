@@ -87,8 +87,6 @@ export function Selection() {
         marginLeft: "5%",
         marginTop: "0%",
         padding: "10px",
-        // marginTop: position.x,
-        // position: "absolute",
       }}
     >
       <span class="material-symbols-outlined" onClick={changeFontBold}>
@@ -97,7 +95,6 @@ export function Selection() {
       <span class="material-symbols-outlined" onClick={changeFontItalic}>
         format_italic
       </span>
-      {/* <label>Choose Font:</label> */}
       <select value={font} onChange={handleSelect}>
         {fonts1.map((font, key) => (
           <option value={font} key={key}>
@@ -105,8 +102,6 @@ export function Selection() {
           </option>
         ))}
       </select>
-
-      {/* <span class="material-symbols-outlined">format_underlined</span> */}
       <select value={size} onChange={changeTextSize}>
         {options}
       </select>

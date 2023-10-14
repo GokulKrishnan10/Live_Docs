@@ -58,6 +58,14 @@ export function RightClick() {
             Clear formatting
           </div>
         </div>
+        <div className="docs-rightclick-element">
+          <span class="material-symbols-outlined">add</span>
+          <div className="name">Insert a new page above</div>
+        </div>
+        <div className="docs-rightclick-element">
+          <span class="material-symbols-outlined">add</span>
+          <div className="name">Insert a new page below</div>
+        </div>
       </div>
     </div>
   );
