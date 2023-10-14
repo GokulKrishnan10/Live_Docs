@@ -1,6 +1,18 @@
 const mongoose = require("mongoose");
+const mysql = require("mysql");
+const connection = mysql.createConnection({
+  host: "localhost",
+  port: 3306,
+  user: "gokul",
+  password: "Gokul@1010",
+  database: "document_database",
+});
+connection.connect(function (error) {
+  if (error) throw new Error(error);
+  console.log("Connection succeeded");
+});
 require("dotenv").config();
-mongoose.connect(process.env.MONGO_URL, {
+connection.mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

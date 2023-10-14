@@ -8,7 +8,7 @@ const router = require("./router");
 const cors = require("cors");
 //Middlewares
 app.use("/user", router);
-app.use(cors({ origin: "localhost:3000" }));
+app.use(cors({ origin: "*" }));
 
 app.get("/", (req, res) => {
   res.send("<h1>Hello, Docs server</h1>");
