@@ -13,6 +13,8 @@ const initialValue = {
   imageSettings: false,
   globalRightClick: false,
   page: 1,
+  positions: { x: 0, y: 0 },
+  selectPosition: { x: 0, y: 0 },
 };
 function storeReduce(state = initialValue, actions) {
   switch (actions.type) {
@@ -98,6 +100,19 @@ function storeReduce(state = initialValue, actions) {
       return {
         ...state,
         page: actions.payload,
+      };
+    }
+    case "set-click-position": {
+      console.log("mouse position is changed only", actions.payload);
+      return {
+        ...state,
+        positions: actions.payload,
+      };
+    }
+    case "set-select-position": {
+      return {
+        ...state,
+        selectPosition: actions.payload,
       };
     }
     default:

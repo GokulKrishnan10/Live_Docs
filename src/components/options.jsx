@@ -1,8 +1,8 @@
 import "./css/options.css";
-import { useSelector } from "react-redux/es/hooks/useSelector";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { changeHeader } from "./redux/actions";
 import { insertImage } from "./redux/actions";
+import { changeBold } from "./redux/actions";
 import { useRef } from "react";
 export default function Options() {
   const fonts1 = [
@@ -24,6 +24,7 @@ export default function Options() {
     "Droid Sans",
   ];
   const fileRef = useRef();
+  const bold = useSelector((state) => state.bold);
   const options = [<option>{"Select Font size"}</option>];
   for (let i = 7; i <= 60; i++) {
     options.push(
@@ -47,6 +48,10 @@ export default function Options() {
   const getImage = () => {
     fileRef.current.click();
     console.log(fileRef.current);
+  };
+
+  const changeBoldLetter = () => {
+    dispatch(changeBold(!bold));
   };
 
   const handleFileChange = async (event) => {
@@ -125,6 +130,7 @@ export default function Options() {
               <span
                 style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
+                onClick={changeBoldLetter}
               >
                 format_bold
               </span>

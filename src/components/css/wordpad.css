@@ -5,6 +5,11 @@
   justify-content: center;
   align-items: center;
 }
+.image-resize {
+  outline: 3px solid blue;
+  height: 400px;
+  width: 250px;
+}
 .page {
   height: 48cm;
   width: 25cm;

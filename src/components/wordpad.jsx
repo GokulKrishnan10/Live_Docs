@@ -5,10 +5,13 @@ import { Selection } from "./selection";
 import { useRef } from "react";
 import { displayImageSettings } from "./redux/actions";
 import { openOnSelect } from "./redux/actions";
+import { setClickPosition } from "./redux/actions";
 import { ImageClick } from "./imageclick";
 import { RightClick } from "./rightclick";
 import { setRightClick } from "./redux/actions";
 import { setPage } from "./redux/actions";
+import { TextSelect } from "./textselect";
+import { setSelectPosition } from "./redux/actions";
 
 export default function WordPad({ title }) {
   const select = useSelector((state) => state.select);
@@ -53,24 +56,33 @@ export default function WordPad({ title }) {
       console.log("Backspace is being pressed-------------------->>>>>");
     }
   }
-
+  let string = "";
   const handleSelect = (event) => {
+    event.preventDefault();
     const select = window.getSelection();
     console.log(select.toString());
     console.log(pRef.current);
     console.log(select);
-    let string = select.toString();
+    string = select.toString();
     string = string.trim();
-    //  dispatch(openOnSelect("select"));
+    console.log(event.clientX, event.clientY);
+    dispatch(openOnSelect("select"));
+    dispatch(setSelectPosition({ x: event.clientX, y: event.clientY }));
   };
 
   const textChange = (event) => {
     const select = window.getSelection();
-    console.log(select.toString());
+    console.log("selected text", select.toString());
     console.log(pRef.current);
-    console.log(select);
+    console.log("selected text", select);
     let string = select.toString();
     string = string.trim();
+    console.log(
+      "Text is being selected",
+      select.anchorNode,
+      "and string is ",
+      string
+    );
     // dispatch(openOnSelect("select"));
     if (select.anchorNode && string.length > 0) {
       const node = select.anchorNode;
@@ -99,16 +111,23 @@ export default function WordPad({ title }) {
     event.preventDefault();
     // event.stopPropagation();
     console.log("Right clicked image");
+    console.log("mouse event position here", event.clientX, event.clientY);
+    dispatch(setClickPosition({ x: event.clientX, y: event.clientY }));
     dispatch(displayImageSettings(true));
   };
 
   const handleRightPad = (event) => {
+    console.log("mouse event position here", event.clientX, event.clientY);
+    dispatch(setClickPosition({ x: event.clientX, y: event.clientY }));
     event.preventDefault();
     event.stopPropagation();
+    console.log("mouse event position here", event.clientX, event.clientY);
+    // dispatch(setClickPosition({ x: event.clientX, y: event.clientY }));
     dispatch(setRightClick(true));
   };
 
   useEffect(() => {
+    console.log("Bold is being changed-=-=-=-=-=-=-=-=-=--=-=-=");
     textChange("hello");
   }, [font, size, bold, style]);
 
@@ -120,22 +139,17 @@ export default function WordPad({ title }) {
     }
   }, [page]);
 
+  const imageClick = (event) => {
+    console.log("Image is being clicked", event.target);
+    event.target.className = "image-resize";
+    console.log("Image is being clicked", event.target);
+  };
   return (
     <>
       {imageSettings && <ImageClick />}
-      {rightClick && <RightClick />}
+      {select && <Selection />}
       <div className={`pad ${title}`} onContextMenu={handleRightPad}>
         <div className="page">
-          {image?.slice(-1) &&
-            image.map((img) => (
-              <img
-                src={img}
-                alt="insertion"
-                height={"400px"}
-                width={"250px"}
-                onContextMenu={displayImageRightClick}
-              />
-            ))}
           <p
             contentEditable="true"
             className="edit-para"
@@ -145,9 +159,22 @@ export default function WordPad({ title }) {
             onKeyDown={handleEnter}
             style={{
               lineHeight: "1.5",
+              height: `48cm`,
             }}
-          ></p>
-          {select && <Selection style={{ position: "absolute" }} />}
+          >
+            {" "}
+            {image?.slice(-1) &&
+              image.map((img) => (
+                <img
+                  src={img}
+                  alt="insertion"
+                  height={"400px"}
+                  width={"250px"}
+                  onContextMenu={displayImageRightClick}
+                  onClick={imageClick}
+                />
+              ))}
+          </p>
         </div>
       </div>
     </>

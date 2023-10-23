@@ -12,6 +12,7 @@ export function Selection() {
   const font = useSelector((state) => state.font);
   const italic = useSelector((state) => state.italic);
   const size = useSelector((state) => state.size);
+  const selectpositions = useSelector((state) => state.selectPosition);
   // const position=useSelector((state)=>state.position)
   const fonts = [
     "Poppins",
@@ -84,9 +85,10 @@ export function Selection() {
       className="change"
       style={{
         backgroundColor: "skyblue",
-        marginLeft: "5%",
-        marginTop: "0%",
+        marginTop: `${selectpositions.y - 100}px`,
+        marginLeft: `${selectpositions.x}px`,
         padding: "10px",
+        position: "absolute",
       }}
     >
       <span class="material-symbols-outlined" onClick={changeFontBold}>

@@ -1,10 +1,11 @@
 import "./css/rightclick.css";
 import { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setRightClick } from "./redux/actions";
 export function RightClick() {
   const dispatch = useDispatch();
   const rightRef = useRef(null);
+  const positions = useSelector((state) => state.positions);
   useEffect(() => {
     function handle(event) {
       if (rightRef.current && !rightRef.current.contains(event.target)) {
@@ -15,7 +16,11 @@ export function RightClick() {
     return document.removeEventListener("click", handle);
   });
   return (
-    <div className="docs-rightclick" ref={rightRef}>
+    <div
+      className="docs-rightclick"
+      ref={rightRef}
+      style={{ marginLeft: positions.x, marginTop: positions.y }}
+    >
       <div className="docs-rightclick-contain">
         <div className="docs-rightclick-element">
           <span class="material-symbols-outlined">cut</span>

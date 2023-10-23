@@ -1,5 +1,42 @@
 import "../css/tools/file.css";
+import { useNavigate } from "react-router-dom";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 export function File() {
+  const navigate = useNavigate();
+  const focusOnTitle = (event) => {
+    const head = document.querySelector(".docs-title-editable");
+    head.focus();
+    head.innerText = "";
+    console.log("HEad editable is ", head);
+  };
+  const deleteCurrent = (event) => {
+    alert("Page is being deleted");
+    navigate(-1);
+  };
+  const downloadPage = (event) => {
+    const webpage = document.querySelector(".edit-para");
+    html2canvas(webpage).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4", true);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+      const imgX = (pdfWidth - imgWidth * ratio) / 2;
+      const imgY = 50;
+      pdf.addImage(
+        imgData,
+        "PNG",
+        imgX,
+        imgY,
+        imgWidth * ratio,
+        imgHeight * ratio
+      );
+      pdf.save("document.pdf");
+    });
+  };
   return (
     <div className="file-tools">
       <div className="docs-options-container">
@@ -48,7 +85,7 @@ export function File() {
             <span class="icon1 material-symbols-outlined">arrow_right</span>
           </div>
         </div>
-        <div className="docs-edit">
+        <div className="docs-edit" onClick={downloadPage}>
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">download</span>
             <div className="docs-original">Download</div>
@@ -58,7 +95,7 @@ export function File() {
           </div>
         </div>
         <hr style={{ width: "100%" }}></hr>
-        <div className="docs-edit">
+        <div className="docs-edit" onClick={focusOnTitle}>
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">border_color</span>
             <div className="docs-original">Rename</div>
@@ -67,7 +104,9 @@ export function File() {
         <div className="docs-edit">
           <div className="docs-editdesign">
             <span class="material-symbols-outlined">delete</span>
-            <div className="docs-original">Move to Bin</div>
+            <div className="docs-original" onClick={deleteCurrent}>
+              Move to Bin
+            </div>
           </div>
         </div>
         <hr style={{ width: "100%" }}></hr>

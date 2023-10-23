@@ -46,3 +46,11 @@ export const setPage = (value) => ({
   type: "increase-page",
   payload: value,
 });
+export const setClickPosition = (value) => ({
+  type: "set-click-position",
+  payload: value,
+});
+export const setSelectPosition = (value) => ({
+  type: "set-select-position",
+  payload: value,
+});
