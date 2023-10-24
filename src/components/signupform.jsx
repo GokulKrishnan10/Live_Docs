@@ -1,5 +1,6 @@
 import "./css/signupform.css";
 import { Google } from "./google";
+import { Link } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 export default function Signupform() {
   function handleSubmit(event) {
@@ -9,7 +10,7 @@ export default function Signupform() {
     <div className="form-class">
       <div className="form-input">
         <div>
-          <h1>SignUp for LiveDocs</h1>
+          <h2>SignUp for LiveDocs</h2>
         </div>
         <div>
           <form method="post" onSubmit={handleSubmit}>
@@ -22,6 +23,10 @@ export default function Signupform() {
             <input type="date" name="dob" />
             <br />
             <button className="submit-button">Submit</button>
+            <hr />
+            <Link to="/login">
+              <button className="submit-button">Login</button>
+            </Link>
           </form>
         </div>
 

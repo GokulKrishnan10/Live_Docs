@@ -1,9 +1,12 @@
 import "../css/tools/file.css";
 import { useNavigate } from "react-router-dom";
 import html2canvas from "html2canvas";
+import { useState } from "react";
 import jsPDF from "jspdf";
+import { ExpandDownload } from "./expanddownload";
 export function File() {
   const navigate = useNavigate();
+  const [expand, setExpand] = useState(false);
   const focusOnTitle = (event) => {
     const head = document.querySelector(".docs-title-editable");
     head.focus();
@@ -13,6 +16,9 @@ export function File() {
   const deleteCurrent = (event) => {
     alert("Page is being deleted");
     navigate(-1);
+  };
+  const expandDownload = (event) => {
+    setExpand(true);
   };
   const downloadPage = (event) => {
     const webpage = document.querySelector(".edit-para");
@@ -91,8 +97,11 @@ export function File() {
             <div className="docs-original">Download</div>
           </div>
           <div>
-            <span class="material-symbols-outlined">arrow_right</span>
+            <span class="material-symbols-outlined" onClick={expandDownload}>
+              arrow_right
+            </span>
           </div>
+          {/* {expand && <ExpandDownload />} */}
         </div>
         <hr style={{ width: "100%" }}></hr>
         <div className="docs-edit" onClick={focusOnTitle}>

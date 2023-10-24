@@ -1,10 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins");
 .form-class {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background-color: navy;
 }
 .form-input {
   display: flex;
@@ -20,12 +20,18 @@
 form {
   margin: 50px;
 }
+.form-class {
+  font-family: "Poppins", sans-serif;
+}
+input {
+  font-family: "Poppins", sans-serif;
+}
 .submit-button {
   background-color: navy;
   color: white;
   border-radius: 25px;
-  height: 50px;
-  font-size: 20px;
+  height: 40px;
+  font-size: 15px;
   justify-content: center;
   align-self: center;
   margin-left: 200px;
