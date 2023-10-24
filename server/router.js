@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
-router.use(authenticate);
-router.get("/", (req, res) => {});
-function authenticate() {}
+import MiddlewareClass from "./middlewares/Middleware";
+router.use(MiddlewareClass.verifyToken);
+router.get("/edit", (request, response) => {});
 module.exports = router;

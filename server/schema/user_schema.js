@@ -1,18 +1,19 @@
 const mongoose = require("mongoose");
-const mysql = require("mysql");
-const connection = mysql.createConnection({
-  host: "localhost",
-  port: 3306,
-  user: "gokul",
-  password: "Gokul@1010",
-  database: "document_database",
-});
-connection.connect(function (error) {
-  if (error) throw new Error(error);
-  console.log("Connection succeeded");
-});
+const pbkdf2 = require("pbkdf2");
+// const mysql = require("mysql");
+// const connection = mysql.createConnection({
+//   host: "mongo",
+//   port: 27017,
+//   user: "root",
+//   password: "password",
+//   database: "document_database",
+// });
+// connection.connect(function (error) {
+//   if (error) throw new Error(error);
+//   console.log("Connection succeeded");
+// });
 require("dotenv").config();
-connection.mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect("mongodb://mongo_container:27017", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -48,11 +49,24 @@ async function deleteUser(data) {
     return error;
   }
 }
+async function checkUser(data) {
+  try {
+    const res = await userModel.findOne(data);
+    if (pbkdf2(data.password, res.salt, 500) === res.password) return res;
+    return new Error();
+  } catch (error) {
+    return error;
+  }
+}
 async function addUser(data) {
   try {
+    const salt = crypto.randomBytes(128).toString("base64");
+    const iterations = 500;
+    const hashedPassword = pbkdf2(data.password, salt, iterations);
     const res = await userModel.create({
       mail_id: data.mail,
-      password: data.password,
+      password: hashedPassword,
+      salt: salt,
       phone_number: data.phonenumber,
     });
     return res;
@@ -69,4 +83,4 @@ async function updateUser(data, updatedData) {
   }
 }
 
-module.exports = [addUser, updateUser, deleteUser];
+module.exports = [addUser, updateUser, deleteUser, checkUser];

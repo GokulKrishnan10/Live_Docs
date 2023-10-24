@@ -7,10 +7,14 @@ const [addUser, updateUser, deleteUser] = require("./schema/user_schema");
 const router = require("./router");
 const cors = require("cors");
 //Middlewares
-app.use("/user", router);
+app.use("/api/user", router);
 app.use(cors({ origin: "*" }));
 
 app.get("/", (req, res) => {
+  res.send("<h1>Hello, Docs server</h1>");
+});
+
+app.get("/api", (req, res) => {
   res.send("<h1>Hello, Docs server</h1>");
 });
 
