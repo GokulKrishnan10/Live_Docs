@@ -1,17 +1,5 @@
 const mongoose = require("mongoose");
-const pbkdf2 = require("pbkdf2");
-// const mysql = require("mysql");
-// const connection = mysql.createConnection({
-//   host: "mongo",
-//   port: 27017,
-//   user: "root",
-//   password: "password",
-//   database: "document_database",
-// });
-// connection.connect(function (error) {
-//   if (error) throw new Error(error);
-//   console.log("Connection succeeded");
-// });
+const bcrypt = require("bcrypt");
 require("dotenv").config();
 mongoose.connect("mongodb://mongo_container:27017", {
   useNewUrlParser: true,
@@ -38,10 +26,18 @@ const UserSchema = new mongoose.Schema({
   phone_number: {
     type: String,
     unique: true,
+    required: true,
+  },
+  full_name: {
+    type: String,
+  },
+  country: {
+    type: String,
+    required: true,
   },
 });
 const userModel = mongoose.model("User", UserSchema);
-async function deleteUser(data) {
+async function deleteUser(request, response) {
   try {
     const res = await userModel.deleteOne(data);
     return res;
@@ -49,20 +45,19 @@ async function deleteUser(data) {
     return error;
   }
 }
-async function checkUser(data) {
+async function checkUser(request, response) {
   try {
     const res = await userModel.findOne(data);
-    if (pbkdf2(data.password, res.salt, 500) === res.password) return res;
+    const verify = bcryt.hash(data.password, 15);
+    if (verify === res.password) return res;
     return new Error();
   } catch (error) {
     return error;
   }
 }
-async function addUser(data) {
+async function addUser(request, response) {
+  const hashedPassword = bcrypt.hash(data.password, 15);
   try {
-    const salt = crypto.randomBytes(128).toString("base64");
-    const iterations = 500;
-    const hashedPassword = pbkdf2(data.password, salt, iterations);
     const res = await userModel.create({
       mail_id: data.mail,
       password: hashedPassword,
@@ -74,7 +69,7 @@ async function addUser(data) {
     return error;
   }
 }
-async function updateUser(data, updatedData) {
+async function updateUser(request, response) {
   try {
     const res = await userModel.findOneAndUpdate(data, updatedData);
     return res;
