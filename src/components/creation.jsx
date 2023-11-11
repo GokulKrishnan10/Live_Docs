@@ -4,7 +4,13 @@ import AddSheet from "./addsheet";
 import { Link } from "react-router-dom";
 export default function Creation() {
   return (
-    <div>
+    <div
+      style={{
+        backgroundColor: "rgb(255,255,255)",
+        height: "100vh",
+        // overflow: "hidden",
+      }}
+    >
       <div className="outer-creation">
         <br />
 
@@ -41,8 +47,15 @@ export default function Creation() {
           }}
         >
           <div></div>
-          <div style={{ display: "flex", flexDirection: "row" }}>
-            <div style={{ display: "flex", flexDirection: "row" }}>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              width: "100vw",
+              justifyContent: "space-around",
+            }}
+          >
+            <div style={{ display: "flex" }}>
               <div>Owned by you</div>
               <div>
                 <span class="material-symbols-outlined">arrow_drop_down</span>

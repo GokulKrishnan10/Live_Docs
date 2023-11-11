@@ -25,7 +25,6 @@ export default function WordPad({ title }) {
   const rightClick = useSelector((state) => state.globalRightClick);
   const dispatch = useDispatch();
   const [isSelecting, setIsSelecting] = useState(false);
-
   const pRef = useRef();
   // console.log("Select is", select);
   function handleSomething(event) {
@@ -138,6 +137,7 @@ export default function WordPad({ title }) {
       pageRef.current.focus();
     }
   }, [page]);
+  useEffect(() => {}, []);
 
   const imageClick = (event) => {
     console.log("Image is being clicked", event.target);
@@ -148,6 +148,7 @@ export default function WordPad({ title }) {
     <>
       {imageSettings && <ImageClick />}
       {select && <Selection />}
+
       <div className={`pad ${title}`} onContextMenu={handleRightPad}>
         <div className="page">
           <p

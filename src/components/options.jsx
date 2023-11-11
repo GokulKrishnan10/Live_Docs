@@ -67,185 +67,188 @@ export default function Options() {
   };
 
   return (
-    <div className="options-container">
-      <input
-        type="file"
-        style={{ display: "none" }}
-        ref={fileRef}
-        onChange={handleFileChange}
-      />
-      <div className="options-class">
-        <div>
-          <div className="icons">
-            <div className="reverse-options">
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                search
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                undo
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                redo
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                print
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                imagesearch_roller
-              </span>
-            </div>
-
-            <div className="selects">
-              <div className="line"></div>
-              <select style={{ marginLeft: "10px", borderRadius: "5px" }}>
-                {fonts1.map((font, key) => (
-                  <option value={font} key={key}>
-                    {font}
-                  </option>
-                ))}
-              </select>
-              <div className="line"></div>
-              <select style={{ marginLeft: "10px", borderRadius: "5px" }}>
-                {options}
-              </select>
-            </div>
-
-            <div className="font-styles">
-              <div className="line"></div>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-                onClick={changeBoldLetter}
-              >
-                format_bold
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                format_italic
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                format_underlined
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                ink_highlighter
-              </span>
-            </div>
-
-            <div className="line"></div>
-            <div className="docs-image-icon">
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                link
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                add_comment
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-                onClick={getImage}
-              >
-                image
-              </span>
-            </div>
-
-            <div className="line"></div>
-            <div className="inc-dec">
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                format_indent_decrease
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                format_indent_increase
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                format_list_bulleted
-              </span>
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-              >
-                format_list_numbered
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="last">
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              marginLeft: "2%",
-            }}
-          >
-            Editing
-            <span
-              style={{ fontSize: "20px", marginLeft: "25px" }}
-              class="material-symbols-outlined"
-            >
-              edit
-            </span>
-          </div>
-
-          <div className="line"></div>
+    <>
+      <div className="options-container">
+        <input
+          type="file"
+          style={{ display: "none" }}
+          ref={fileRef}
+          onChange={handleFileChange}
+        />
+        <div className="options-class">
           <div>
-            {!value && (
+            <div className="icons">
+              <div className="reverse-options">
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  search
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  undo
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  redo
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  print
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  imagesearch_roller
+                </span>
+              </div>
+
+              <div className="selects">
+                <div className="line"></div>
+                <select style={{ marginLeft: "10px", borderRadius: "5px" }}>
+                  {fonts1.map((font, key) => (
+                    <option value={font} key={key}>
+                      {font}
+                    </option>
+                  ))}
+                </select>
+                <div className="line"></div>
+                <select style={{ marginLeft: "10px", borderRadius: "5px" }}>
+                  {options}
+                </select>
+              </div>
+
+              <div className="font-styles">
+                <div className="line"></div>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                  onClick={changeBoldLetter}
+                >
+                  format_bold
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  format_italic
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  format_underlined
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  ink_highlighter
+                </span>
+              </div>
+
+              <div className="line"></div>
+              <div className="docs-image-icon">
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  link
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  add_comment
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                  onClick={getImage}
+                >
+                  image
+                </span>
+              </div>
+
+              <div className="line"></div>
+              <div className="inc-dec">
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  format_indent_decrease
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  format_indent_increase
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  format_list_bulleted
+                </span>
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                >
+                  format_list_numbered
+                </span>
+              </div>
+            </div>
+          </div>
+          <div className="last">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                marginLeft: "2%",
+              }}
+            >
+              Editing
               <span
                 style={{ fontSize: "20px", marginLeft: "25px" }}
                 class="material-symbols-outlined"
-                onClick={displayHeader1}
               >
-                expand_more
+                edit
               </span>
-            )}
-            {value && (
-              <span
-                style={{ fontSize: "20px", marginLeft: "25px" }}
-                class="material-symbols-outlined"
-                onClick={displayHeader}
-              >
-                expand_less
-              </span>
-            )}
+            </div>
+
+            <div className="line"></div>
+            <div>
+              {!value && (
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                  onClick={displayHeader1}
+                >
+                  expand_more
+                </span>
+              )}
+              {value && (
+                <span
+                  style={{ fontSize: "20px", marginLeft: "25px" }}
+                  class="material-symbols-outlined"
+                  onClick={displayHeader}
+                >
+                  expand_less
+                </span>
+              )}
+            </div>
           </div>
         </div>
+        <hr style={{ border: "1px solid blue" }}></hr>
       </div>
-    </div>
+    </>
   );
 }

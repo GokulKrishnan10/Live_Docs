@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   return (
-    <div className="header">
+    <div
+      className="header"
+      style={{ backgroundColor: "rgb(255, 255, 255) !important;" }}
+    >
       <div style={{ display: "flex" }}>
         <div
           style={{
