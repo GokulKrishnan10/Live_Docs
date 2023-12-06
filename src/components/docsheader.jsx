@@ -9,12 +9,21 @@ import { Format } from "./tools/format";
 import { Tools } from "./tools/tools";
 import { Extensions } from "./tools/extensions";
 import { Help } from "./tools/help";
+import { useDispatch } from "react-redux";
+import { setOpenComments } from "./redux/actions";
+import { useSelector } from "react-redux";
+import { Comment } from "./comment";
 
 export default function DocsHeader() {
+  const dispatch = useDispatch();
+  const openCommentSection = useSelector((state) => state.openComment);
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       event.preventDefault();
     }
+  };
+  const handleCommentClick = () => {
+    dispatch(setOpenComments(!openCommentSection));
   };
 
   const arr = [];
@@ -29,6 +38,7 @@ export default function DocsHeader() {
   const [tools, setTools] = useState(false);
   const [extensions, setExtensions] = useState(false);
   const [help, setHelp] = useState(false);
+  const [star, setStart] = useState(false)
 
   const fileRef = useRef(null);
   const editRef = useRef(null);
@@ -38,9 +48,12 @@ export default function DocsHeader() {
   const toolsRef = useRef(null);
   const extensionsRef = useRef(null);
   const helpRef = useRef(null);
+  const commentRef = useRef(null)
+  const buttonRef=useRef(null)
 
   useEffect(() => {
-    function handle(event) {
+    async function handle(event) {
+      console.log(event.target,"elementRef is ",commentRef)
       if (fileRef.current && !fileRef.current.contains(event.target)) {
         setFile(false);
       }
@@ -65,6 +78,9 @@ export default function DocsHeader() {
       ) {
         setExtensions(false);
       }
+      if(commentRef.current && !commentRef.current.contains(event.target) && buttonRef.current && !buttonRef.current.contains(event.target)){
+        dispatch(setOpenComments(false));
+      }
       if (helpRef.current && !helpRef.current.contains(event.target)) {
         setHelp(false);
       }
@@ -88,7 +104,6 @@ export default function DocsHeader() {
           style={{
             display: "flex",
             alignItems: "center",
-            marginTop: "1%",
             marginLeft: "2%",
           }}
         >
@@ -106,8 +121,9 @@ export default function DocsHeader() {
               marginLeft: "6px",
               marginTop: "5px",
             }}
+            onClick={()=>setStart(!star)}
           >
-            <span class="material-symbols-outlined">star</span>
+            <span class={star?"material-symbols-outlined  colored-star":"material-symbols-outlined"}>star</span>
           </div>
         </div>
 
@@ -190,18 +206,27 @@ export default function DocsHeader() {
             marginRight: "4%",
           }}
         >
-          <span
-            class="material-symbols-outlined"
-            style={{ marginTop: "7%", marginRight: "7%" }}
-          >
-            comment
-          </span>
-          <span
-            class="material-symbols-outlined"
-            style={{ marginTop: "7%", marginRight: "7%" }}
-          >
-            videocam
-          </span>
+          <div>
+            <span
+              class="material-symbols-outlined"
+              id="comments-button"
+              onClick={handleCommentClick}
+              style={{ marginTop: "20%", marginRight: "7%" }}
+              ref={buttonRef}
+            >
+              comment
+            </span>
+            {openCommentSection && <div ref={commentRef}><Comment /></div>}
+          </div>
+          <div>
+            <span
+              class="material-symbols-outlined"
+              style={{ marginTop: "7%", marginRight: "7%" ,marginLeft:'30px'}}
+              onClick={()=>window.open("https://meet.google.com","_blank")}
+            >
+              videocam
+            </span>
+          </div>
         </div>
         <div
           style={{

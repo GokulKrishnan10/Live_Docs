@@ -54,3 +54,11 @@ export const setSelectPosition = (value) => ({
   type: "set-select-position",
   payload: value,
 });
+export const addComment=(value)=>({
+  type:'add-comment',
+  payload:value
+})
+export const setOpenComments=(value)=>({
+  type:'open-comment',
+  payload:value
+})

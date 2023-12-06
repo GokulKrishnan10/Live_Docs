@@ -2,9 +2,31 @@ import "./css/signupform.css";
 import { Google } from "./google";
 import { Link } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import axios from "axios";
 export default function Signupform() {
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
+    event.preventDefault();
     console.log(event);
+    const formData = new FormData(event.target);
+    let formObject = {};
+    formData.forEach((value, key) => {
+      formObject[key] = value;
+    });
+    console.log("Form object is ", formObject);
+    try {
+      const response = await axios.post(
+        "http://localhost:2000/api/post-user",
+        {...formObject,password:formObject.password1},
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      console.log("Response received", response);
+    } catch (error) {
+      console.log(error);
+    }
   }
   return (
     <div className="form-class">
@@ -19,6 +41,12 @@ export default function Signupform() {
             <input type="password" placeholder="password" name="password1" />
             <br />
             <input type="password" placeholder="password" name="password2" />
+            <br />
+            <input
+              type="text"
+              placeholder="Enter phone number"
+              name="phone_number"
+            />
             <br />
             <input type="date" name="dob" />
             <br />

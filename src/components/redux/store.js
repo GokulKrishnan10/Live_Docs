@@ -15,6 +15,8 @@ const initialValue = {
   page: 1,
   positions: { x: 0, y: 0 },
   selectPosition: { x: 0, y: 0 },
+  comments:[],
+  openComment:false,
 };
 function storeReduce(state = initialValue, actions) {
   switch (actions.type) {
@@ -114,6 +116,18 @@ function storeReduce(state = initialValue, actions) {
         ...state,
         selectPosition: actions.payload,
       };
+    }
+    case 'add-comment':{
+      return {
+        ...state,
+        comments:[...state.comments,actions.payload]
+      }
+    }
+    case 'open-comment':{
+      return {
+        ...state,
+        openComment:actions.payload
+      }
     }
     default:
       return state;

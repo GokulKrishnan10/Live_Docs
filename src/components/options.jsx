@@ -113,7 +113,7 @@ export default function Options() {
 
               <div className="selects">
                 <div className="line"></div>
-                <select style={{ marginLeft: "10px", borderRadius: "5px" }}>
+                <select style={{ marginLeft: "10px"}}>
                   {fonts1.map((font, key) => (
                     <option value={font} key={key}>
                       {font}
@@ -121,7 +121,7 @@ export default function Options() {
                   ))}
                 </select>
                 <div className="line"></div>
-                <select style={{ marginLeft: "10px", borderRadius: "5px" }}>
+                <select style={{ marginLeft: "10px"}}>
                   {options}
                 </select>
               </div>
@@ -247,7 +247,7 @@ export default function Options() {
             </div>
           </div>
         </div>
-        <hr style={{ border: "1px solid blue" }}></hr>
+        <hr style={{ border: "1px solid grey" }}></hr>
       </div>
     </>
   );

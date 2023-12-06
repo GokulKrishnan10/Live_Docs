@@ -1,0 +1,29 @@
+.comments-container-head{
+    display: flex;
+    flex-direction: column;
+    width: 7cm;
+    height: 6cm;
+    overflow-y: scroll;
+    background-color: rgb(224, 227, 230);
+    margin-left: -200px;
+    position: absolute;
+    box-shadow: 5px 5px 5px rgba(75, 73, 73, 0.2);
+    border-radius: 10px;
+}
+.type-send{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border-radius: 35px;
+    margin: 3px;
+}
+.type-send input{
+    background-color: white;
+    height: 0.5cm !important;
+}
+.comments-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:110px;
+}

@@ -20,6 +20,9 @@
 form {
   margin: 50px;
 }
+.form-class input{
+  border-radius: 5px !important;
+}
 .form-class {
   font-family: "Poppins", sans-serif;
 }
