@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
-mongoose.connect("mongodb://mongo_container:27017", {
+mongoose.connect("mongodb://localhost:27017", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -55,7 +55,7 @@ async function checkUser(request, response) {
     return error;
   }
 }
-async function addUser(request, response) {
+async function addUser(data) {
   const hashedPassword = bcrypt.hash(data.password, 15);
   try {
     const res = await userModel.create({
@@ -78,4 +78,4 @@ async function updateUser(request, response) {
   }
 }
 
-module.exports = [addUser, updateUser, deleteUser, checkUser];
+module.exports = [addUser, updateUser, deleteUser, checkUser, DB];
