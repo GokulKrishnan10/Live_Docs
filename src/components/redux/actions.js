@@ -54,7 +54,7 @@ export const setSelectPosition = (value) => ({
   type: "set-select-position",
   payload: value,
 });
-export const addComment=(value)=>({
+export const setAddComment=(value)=>({
   type:'add-comment',
   payload:value
 })

@@ -31,7 +31,6 @@ export default function Creation() {
               <Sheet />
               <Sheet />
               <Sheet />
-              <Sheet />
             </div>
           </div>
         </div>
@@ -53,6 +52,7 @@ export default function Creation() {
               flexDirection: "row",
               width: "100vw",
               justifyContent: "space-around",
+              marginTop: "20px",
             }}
           >
             <div style={{ display: "flex" }}>

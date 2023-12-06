@@ -38,7 +38,7 @@ export default function DocsHeader() {
   const [tools, setTools] = useState(false);
   const [extensions, setExtensions] = useState(false);
   const [help, setHelp] = useState(false);
-  const [star, setStart] = useState(false)
+  const [star, setStart] = useState(false);
 
   const fileRef = useRef(null);
   const editRef = useRef(null);
@@ -48,12 +48,12 @@ export default function DocsHeader() {
   const toolsRef = useRef(null);
   const extensionsRef = useRef(null);
   const helpRef = useRef(null);
-  const commentRef = useRef(null)
-  const buttonRef=useRef(null)
+  const commentRef = useRef(null);
+  const buttonRef = useRef(null);
 
   useEffect(() => {
     async function handle(event) {
-      console.log(event.target,"elementRef is ",commentRef)
+      console.log(event.target, "elementRef is ", commentRef);
       if (fileRef.current && !fileRef.current.contains(event.target)) {
         setFile(false);
       }
@@ -78,7 +78,12 @@ export default function DocsHeader() {
       ) {
         setExtensions(false);
       }
-      if(commentRef.current && !commentRef.current.contains(event.target) && buttonRef.current && !buttonRef.current.contains(event.target)){
+      if (
+        commentRef.current &&
+        !commentRef.current.contains(event.target) &&
+        buttonRef.current &&
+        !buttonRef.current.contains(event.target)
+      ) {
         dispatch(setOpenComments(false));
       }
       if (helpRef.current && !helpRef.current.contains(event.target)) {
@@ -121,9 +126,9 @@ export default function DocsHeader() {
               marginLeft: "6px",
               marginTop: "5px",
             }}
-            onClick={()=>setStart(!star)}
+            onClick={() => setStart(!star)}
           >
-            <span class={star?"material-symbols-outlined  colored-star":"material-symbols-outlined"}>star</span>
+            <span class="material-symbols-outlined">star</span>
           </div>
         </div>
 
@@ -216,13 +221,17 @@ export default function DocsHeader() {
             >
               comment
             </span>
-            {openCommentSection && <div ref={commentRef}><Comment /></div>}
+            {openCommentSection && (
+              <div ref={commentRef}>
+                <Comment />
+              </div>
+            )}
           </div>
           <div>
             <span
               class="material-symbols-outlined"
-              style={{ marginTop: "7%", marginRight: "7%" ,marginLeft:'30px'}}
-              onClick={()=>window.open("https://meet.google.com","_blank")}
+              style={{ marginTop: "7%", marginRight: "7%", marginLeft: "30px" }}
+              onClick={() => window.open("https://meet.google.com", "_blank")}
             >
               videocam
             </span>
