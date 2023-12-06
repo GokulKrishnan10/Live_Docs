@@ -51,9 +51,9 @@
 
 .input-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
+  /* justify-content: center;
+  align-items: center; */
+  /* flex: 1; */
 }
 
 li {

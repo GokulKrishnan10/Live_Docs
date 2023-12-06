@@ -3,11 +3,10 @@
     flex-direction: column;
     width: 7cm;
     height: 6cm;
-    overflow-y: scroll;
     background-color: rgb(224, 227, 230);
     margin-left: -200px;
     position: absolute;
-    box-shadow: 5px 5px 5px rgba(75, 73, 73, 0.2);
+    box-shadow: 10px 10px 10px rgba(75, 73, 73, 0.2);
     border-radius: 10px;
 }
 .type-send{
@@ -25,5 +24,12 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap:110px;
+    height: 5cm;
+    overflow: hidden;
+}
+.comments-list-container{
+    height: 4cm;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
 }

@@ -40,8 +40,12 @@ export default function Header() {
       </div>
 
       <div className="input-wrapper">
-        <span class="material-symbols-outlined">search</span>
-        <input type="text" placeholder=" Search" class="search" />
+        <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginLeft:'4%'}}>
+          <span class="material-symbols-outlined">search</span>
+        </div>
+        <div>
+          <input type="text" placeholder=" Search" class="search" />
+        </div>
       </div>
       <div style={{ display: "flex" }}>
         <div
