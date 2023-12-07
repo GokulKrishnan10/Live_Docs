@@ -13,6 +13,7 @@ import { useDispatch } from "react-redux";
 import { setOpenComments } from "./redux/actions";
 import { useSelector } from "react-redux";
 import { Comment } from "./comment";
+import star from "../star.png";
 
 export default function DocsHeader() {
   const dispatch = useDispatch();
@@ -53,7 +54,6 @@ export default function DocsHeader() {
 
   useEffect(() => {
     async function handle(event) {
-      console.log(event.target, "elementRef is ", commentRef);
       if (fileRef.current && !fileRef.current.contains(event.target)) {
         setFile(false);
       }
@@ -124,11 +124,25 @@ export default function DocsHeader() {
             style={{
               display: "flex",
               marginLeft: "6px",
-              marginTop: "5px",
+              marginTop: "8px",
             }}
+            className="star-document"
             onClick={() => setStart(!star)}
           >
-            <span class="material-symbols-outlined">star</span>
+            {(star && (
+              <img
+                src={require("../star.png")}
+                alt="star_img"
+                style={{ height: "23px", width: "23px" }}
+              />
+            )) || (
+              <img
+                src={require("../star_outline.png")}
+                alt="star_img"
+                style={{ height: "23px", width: "23px" }}
+              />
+            )}
+            {/* <span class="material-symbols-outlined">star</span> */}
           </div>
         </div>
 

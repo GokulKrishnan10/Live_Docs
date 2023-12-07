@@ -56,7 +56,7 @@ export function File() {
             </span>
             <div className="docs-original">New</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -78,7 +78,7 @@ export function File() {
             <span class="material-symbols-outlined">person_add</span>
             <div className="docs-original">Share</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -87,7 +87,7 @@ export function File() {
             <span class="material-symbols-outlined">mail</span>
             <div className="docs-original">Email</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="icon1 material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -96,7 +96,7 @@ export function File() {
             <span class="material-symbols-outlined">download</span>
             <div className="docs-original">Download</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined" onClick={expandDownload}>
               arrow_right
             </span>
@@ -124,7 +124,7 @@ export function File() {
             <span class="material-symbols-outlined">history</span>
             <div className="docs-original">Version history</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>

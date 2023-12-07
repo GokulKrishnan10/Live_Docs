@@ -43,7 +43,7 @@ export default function Header() {
         <div style={{display:'flex',justifyContent:'center',alignItems:'center',marginLeft:'4%'}}>
           <span class="material-symbols-outlined">search</span>
         </div>
-        <div>
+        <div style={{display:'flex'}}>
           <input type="text" placeholder=" Search" class="search" />
         </div>
       </div>

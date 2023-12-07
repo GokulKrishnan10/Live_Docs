@@ -11,7 +11,7 @@ export function Insert() {
             <span className="article material-symbols-outlined">image</span>
             <div className="docs-original">Image</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -20,7 +20,7 @@ export function Insert() {
             <span className="material-symbols-outlined">draw_abstract</span>
             <div className="docs-original">Table</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -29,7 +29,7 @@ export function Insert() {
             <span class="material-symbols-outlined"></span>
             <div className="docs-original">Drawing</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -38,7 +38,7 @@ export function Insert() {
             <span class="material-symbols-outlined">insert_chart </span>
             <div className="docs-original">Chart</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -59,7 +59,7 @@ export function Insert() {
             <span class="material-symbols-outlined">sliders</span>
             <div className="docs-original">Smart chips</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -81,7 +81,7 @@ export function Insert() {
             <span class="material-symbols-outlined">post_add</span>
             <div className="docs-original">Building blocks</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -113,7 +113,7 @@ export function Insert() {
             <span class="material-symbols-outlined">tag</span>
             <div className="docs-original">Page number</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -122,7 +122,7 @@ export function Insert() {
             <span class="material-symbols-outlined">insert_page_break</span>
             <div className="docs-original">Break</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -150,7 +150,7 @@ export function Insert() {
             <span class="material-symbols-outlined">toc</span>
             <div className="docs-original">Table of Contents</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>

@@ -47,16 +47,17 @@ async function deleteUser(request, response) {
 }
 async function checkUser(request, response) {
   try {
-    const res = await userModel.findOne(data);
+    const result = await userModel.findOne(data);
     const verify = bcryt.hash(data.password, 15);
-    if (verify === res.password) return res;
-    return new Error();
+    if (verify === res.password) response.status(200).json({ data: result });
+    response.status(400).send("Wrong credentials");
   } catch (error) {
-    return error;
+    response.status(404).send("User Not Found");
   }
 }
-async function addUser(data) {
+async function addUser(request, response) {
   const hashedPassword = bcrypt.hash(data.password, 15);
+  const data = request.body;
   try {
     const res = await userModel.create({
       mail_id: data.mail,
@@ -64,9 +65,9 @@ async function addUser(data) {
       salt: salt,
       phone_number: data.phonenumber,
     });
-    return res;
+    if (res) response.status(200).send("User added successfully");
   } catch (error) {
-    return error;
+    response.status(400).send("Error while adding user!!");
   }
 }
 async function updateUser(request, response) {

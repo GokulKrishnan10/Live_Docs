@@ -8,7 +8,7 @@ export function Tools() {
             <span class="material-symbols-outlined">text_rotation_none</span>
             <div className="docs-original">Spelling and Grammar</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>

@@ -8,7 +8,7 @@ export function Extensions() {
             <span class="material-symbols-outlined">docs_add_on</span>
             <div className="docs-original">Add ones</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>

@@ -8,7 +8,7 @@ export function View() {
             <span className="material-symbols-outlined">edit</span>
             <div className="docs-original">Mode</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>

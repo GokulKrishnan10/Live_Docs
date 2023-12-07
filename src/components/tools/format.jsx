@@ -8,7 +8,7 @@ export function Format() {
             <span class="material-symbols-outlined">format_bold</span>
             <div className="docs-original">Text</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -17,7 +17,7 @@ export function Format() {
             <span class="material-symbols-outlined">view_headline</span>
             <div className="docs-original">Paragraph Texts</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -28,7 +28,7 @@ export function Format() {
             </span>
             <div className="docs-original">Align and indent</div>
           </div>
-          <div>
+          <div  style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -37,7 +37,7 @@ export function Format() {
             <span class="material-symbols-outlined">format_line_spacing</span>
             <div className="docs-original">Line & Spacing</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -46,7 +46,7 @@ export function Format() {
             <span class="material-symbols-outlined">view_column</span>
             <div className="docs-original">Columns</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -84,7 +84,7 @@ export function Format() {
             <span class="material-symbols-outlined">table_chart</span>
             <div className="docs-original">Table</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -93,7 +93,7 @@ export function Format() {
             <span class="material-symbols-outlined">image</span>
             <div className="docs-original">Image</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
@@ -102,7 +102,7 @@ export function Format() {
             <span class="material-symbols-outlined">horizontal_rule</span>
             <div className="docs-original">Borders and lines</div>
           </div>
-          <div>
+          <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}>
             <span class="material-symbols-outlined">arrow_right</span>
           </div>
         </div>
