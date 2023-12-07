@@ -10,12 +10,8 @@ export function Comment() {
     const comment = document.querySelector("#comment-id").value;
     console.log("Comment value is ", comment);
     dispatch(setAddComment(comment.toString()));
-    document.querySelector("#comment-id").value='';
+    document.querySelector("#comment-id").value = "";
   };
-
-  useEffect(() => {
-    console.log("COmment list has been updated");
-  }, [commentsList]);
 
   return (
     <div className="comments-container-head">
